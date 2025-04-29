@@ -45,6 +45,7 @@ var swiper1 = new Swiper('.client-swiper', {
       768: { slidesPerView: 2 },
       1024: { slidesPerView: 3 }
     }
+    
   });
   
   // Counter Initialization
@@ -58,11 +59,29 @@ var swiper1 = new Swiper('.client-swiper', {
   
   // Dark Mode Toggle
   function toggleDarkMode() {
-    const body = document.body;
+    const themeLink = document.getElementById('theme-link');
     const modeIcon = document.getElementById('mode-icon');
-    body.classList.toggle('dark-mode');
-    modeIcon.textContent = body.classList.contains('dark-mode') ? '☀️' : '🌙'; 
+  
+    if (themeLink.getAttribute('href') === 'css/light.css') {
+      themeLink.setAttribute('href', 'css/dark.css');
+      modeIcon.textContent = '☀️';
+      localStorage.setItem('theme', 'dark');
+    } else {
+      themeLink.setAttribute('href', 'css/light.css');
+      modeIcon.textContent = '🌙';
+      localStorage.setItem('theme', 'light');
+    }
   }
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    const themeLink = document.getElementById('theme-link');
+    const modeIcon = document.getElementById('mode-icon');
+  
+    themeLink.setAttribute('href', `css/${savedTheme}.css`);
+    modeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+  });
+  
   
   // Navbar toggle on mobile
   const menuToggle = document.getElementById('menu-toggle');
@@ -134,4 +153,3 @@ if (!isMobileDevice()) {
     hero.style.backgroundPosition = `center ${50 + scrollY * 0.1}%`;
   });
 }
-    
