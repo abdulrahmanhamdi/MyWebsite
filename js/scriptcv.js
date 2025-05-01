@@ -75,7 +75,7 @@ function playSound(sound) {
   }
 }
 
-// كتم وتفعيل الصوت
+
 const muteToggle = document.getElementById("muteToggle");
 if (muteToggle) {
   muteToggle.addEventListener("click", () => {
@@ -86,18 +86,17 @@ if (muteToggle) {
 }
 document.addEventListener("DOMContentLoaded", updateMuteIcon);
 
-// صوت عند النقر على عناصر nav-sound
 document.querySelectorAll(".nav-sound").forEach(link => {
   link.addEventListener("click", () => playSound(clickSound));
 });
 
-// صوت عند فتح القائمة الجانبية
+
 const offcanvas = document.getElementById("sideMenu");
 if (offcanvas) {
   offcanvas.addEventListener("show.bs.offcanvas", () => playSound(clickSound));
 }
 
-// === وضع الليل والنهار ===
+
 const modeToggles = [
   document.getElementById("modeToggle"),
   document.getElementById("modeToggleDesktop")
