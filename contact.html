@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me - Abdulrahman Hamdi</title>
+
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap-theme.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/swiper.min.css">
+  <link id="theme-link" rel="stylesheet" href="css/light.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Open+Sans:300,400,700" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="top-navbar">
+  <div class="container navbar-content">
+    <div class="navbar-left">
+      <a href="index.html" class="logo-only">
+        <img src="assets/logo_home2.png" alt="Home Logo" class="big-logo">
+      </a>
+    </div>
+
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span><span></span><span></span>
+    </div>
+
+    <div class="navbar-right" id="navbar-right">
+      <ul class="main-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="infinityteam.html">Infinity Team</a></li>
+        <li><a href="resume.html">My Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="dark-mode-toggle" onclick="toggleDarkMode()">
+      <span id="mode-icon" style="font-size: 24px; cursor: pointer;">🌙</span>
+    </div>
+  </div>
+</nav>
+
+<!-- Contact Section -->
+<section class="contact-banner">
+  <div class="container text-center">
+    <h1>Let's Get in Touch</h1>
+    <p>Have a question or want to work together? Feel free to send a message!</p>
+  </div>
+</section>
+
+<section class="projects-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <form id="contact-form">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+          
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+          
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+            </div>
+          
+            <div class="form-group">
+              <label for="title">Message Title</label>
+              <input type="text" class="form-control" id="title" name="title" required>
+            </div>
+          
+            <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+          </form>
+          
+
+        <!-- Success/Error Toast -->
+        <div id="toast" style="
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background: #2f855a;
+          color: white;
+          padding: 12px 20px;
+          border-radius: 6px;
+          display: none;
+          z-index: 9999;
+          box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        "></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container text-center">
+    <ul class="footer-social">
+      <li><a href="https://linkedin.com/in/abdulrahman-hamdi-54a8a6143/" target="_blank"><img src="assets/linkedin.png" alt="LinkedIn"></a></li>
+      <li><a href="https://instagram.com/98abdulrahmanhamdi/" target="_blank"><img src="assets/instagram.png" alt="Instagram"></a></li>
+      <li><a href="https://x.com/abdulrahmanh524" target="_blank"><img src="assets/x.png" alt="X"></a></li>
+      <li><a href="https://github.com/abdulrahmanhamdi" target="_blank"><img src="assets/github.png" alt="GitHub"></a></li>
+    </ul>
+    <p class="footer-credit">© 2025 Abdulrahman Hamdi. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="js/jquery-2.1.1.js"></script>
+<script src="js/swiper.jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+<script src="js/jquery.counterup.min.js"></script>
+<script src="js/script.js"></script>
+
+<!-- EmailJS SDK & Custom Script -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  emailjs.init("6sI2w087pXXbjM8TR");
+
+  const form = document.getElementById('contact-form');
+  const toast = document.getElementById('toast');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    emailjs.sendForm('service_ueuwy9e', 'template_mwmscf3', this)
+      .then(() => {
+        showToast('✅ Message sent successfully!', '#2f855a');
+        form.reset();
+      })
+      .catch((error) => {
+        showToast('❌ Failed to send message.', '#c53030');
+        console.error(error);
+      });
+  });
+
+  function showToast(message, bgColor) {
+    toast.innerText = message;
+    toast.style.backgroundColor = bgColor;
+    toast.style.display = 'block';
+    setTimeout(() => {
+      toast.style.display = 'none';
+    }, 4000);
+  }
+</script>
+
+</body>
+</html>
