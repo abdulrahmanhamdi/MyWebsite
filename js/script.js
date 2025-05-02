@@ -57,31 +57,26 @@ var swiper1 = new Swiper('.client-swiper', {
     $('.main-nav').toggleClass('show-it');
   });
   
-  // Dark Mode Toggle
   function toggleDarkMode() {
-    const themeLink = document.getElementById('theme-link');
+    const body = document.body;
     const modeIcon = document.getElementById('mode-icon');
-  
-    if (themeLink.getAttribute('href') === 'css/light.css') {
-      themeLink.setAttribute('href', 'css/dark.css');
-      modeIcon.textContent = '☀️';
-      localStorage.setItem('theme', 'dark');
-    } else {
-      themeLink.setAttribute('href', 'css/light.css');
-      modeIcon.textContent = '🌙';
-      localStorage.setItem('theme', 'light');
-    }
+    
+    const isDark = body.classList.toggle('dark-mode');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    modeIcon.textContent = isDark ? '☀️' : '🌙';
   }
-  
+
   document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme') || 'light';
-    const themeLink = document.getElementById('theme-link');
     const modeIcon = document.getElementById('mode-icon');
-  
-    themeLink.setAttribute('href', `css/${savedTheme}.css`);
-    modeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+    
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark-mode');
+      modeIcon.textContent = '☀️';
+    } else {
+      modeIcon.textContent = '🌙';
+    }
   });
-  
   
   // Navbar toggle on mobile
   const menuToggle = document.getElementById('menu-toggle');

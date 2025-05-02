@@ -189,6 +189,7 @@ document.querySelector('.back-to-top-icon').addEventListener('click', function (
   document.getElementById("closeSidebar").addEventListener("click", function () {
     document.getElementById("sidebar").classList.remove("active");
   });
+  
   const searchInput = document.getElementById("searchInput");
   const searchForm = document.getElementById("searchForm");
   const searchBox = document.getElementById("search-nav");
@@ -198,9 +199,10 @@ document.querySelector('.back-to-top-icon').addEventListener('click', function (
   const btnClose = document.getElementById("closeMatch");
   
   const searchableElements = document.querySelectorAll("section:not(.swiper), .testimonial-box, .about-infinityteam, .stat-box");
+  
   let matchSpans = [];
   let currentIndex = 0;
-  let isSearchActive = false; 
+  let isSearchActive = false;
   
   function removeHighlights(element) {
     const highlights = element.querySelectorAll("span.highlight-result");
@@ -255,12 +257,17 @@ document.querySelector('.back-to-top-icon').addEventListener('click', function (
   
   searchForm.addEventListener("submit", function (e) {
     e.preventDefault();
-    isSearchActive = true; 
-  
     const query = searchInput.value.trim().toLowerCase();
-    let resultsFound = false;
+  
+    if (query === "") {
+      alert("Please type a word to search.");
+      return;
+    }
+  
+    isSearchActive = true;
     matchSpans = [];
     currentIndex = 0;
+    let resultsFound = false;
   
     searchableElements.forEach(section => {
       section.style.display = "none";
@@ -274,11 +281,14 @@ document.querySelector('.back-to-top-icon').addEventListener('click', function (
     });
   
     matchSpans = Array.from(document.querySelectorAll(".highlight-result"));
-    if (matchSpans.length > 0) {
+    if (resultsFound && matchSpans.length > 0) {
       searchBox.classList.remove("d-none");
       matchInfo.textContent = `1/${matchSpans.length}`;
       scrollToMatch(0);
     } else {
+      searchableElements.forEach(section => {
+        section.style.display = "";
+      });
       searchBox.classList.add("d-none");
       alert("No results found for: " + query);
     }
@@ -292,7 +302,7 @@ document.querySelector('.back-to-top-icon').addEventListener('click', function (
       });
       matchSpans = [];
       currentIndex = 0;
-      isSearchActive = false; 
+      isSearchActive = false;
       searchBox.classList.add("d-none");
     }
   });
@@ -314,32 +324,11 @@ document.querySelector('.back-to-top-icon').addEventListener('click', function (
   btnClose.addEventListener("click", () => {
     searchBox.classList.add("d-none");
     searchInput.value = "";
-    isSearchActive = false; 
+    isSearchActive = false;
   
     searchableElements.forEach(section => {
       section.style.display = "";
       removeHighlights(section);
-    });
-  });
-  
-  window.addEventListener("scroll", () => {
-    if (isSearchActive) return; 
-  
-    const sidebar = document.getElementById("sidebar");
-    const navbar = document.getElementById("mainNavbar");
-  
-    if (sidebar.classList.contains("active")) {
-      sidebar.classList.remove("active");
-    }
-  
-    if (navbar.classList.contains("show")) {
-      const bsCollapse = new bootstrap.Collapse(navbar, { toggle: false });
-      bsCollapse.hide();
-    }
-  });
-  
-  document.querySelectorAll(".sidebar-menu a, .navbar-nav a").forEach(link => {
-    link.addEventListener("click", () => {
     });
   });
   
