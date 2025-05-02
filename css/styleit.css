@@ -28,7 +28,9 @@
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
+  
   
   .icon-btn {
     background: none;
@@ -48,25 +50,7 @@
     box-shadow: none;
   }
   /* ================= Hero Section - Updated Style ================== */
-  header.hero {
-    background: radial-gradient(circle at 30% 30%, rgba(0, 186, 255, 0.2), transparent 60%),
-                radial-gradient(circle at 70% 60%, rgba(0, 255, 180, 0.12), transparent 60%),
-                var(--bg-color);
-    color: var(--text-color);
-    padding-bottom: 80px;
-    position: relative;
-    z-index: 1;
-    transition: background-color 0.5s ease;
-  }
-  
-  body.dark-mode header.hero {
-    background: radial-gradient(circle at 30% 30%, rgba(0, 186, 255, 0.2), transparent 60%),
-                radial-gradient(circle at 70% 60%, rgba(0, 255, 180, 0.12), transparent 60%),
-                var(--bg-color);
-    background-blend-mode: lighten;
-  }
-    
-  
+   
   .hero-text {
     margin-top: 20%;
     margin-bottom: 20%;
@@ -127,7 +111,6 @@
     left: 0;
     width: 100%;
     height: 180px;
-    background: url('assets/wave-bottom.svg') no-repeat bottom center;
     background-size: cover;
     z-index: 0;
   }
@@ -230,6 +213,34 @@
     color: var(--primary-color);
     transform: translateY(-2px);
   }
+
+  .navbar-toggler i {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    display: inline-block;
+  }
+  
+  
+  .navbar-toggler:focus i {
+    color: var(--primary-color);
+  }
+  .navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  .navbar-toggler {
+    border: none;
+    border-radius: 50%;
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.05); 
+    transition: all 0.3s ease;
+  }
+  .navbar-toggler:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+  }
+  
+  
   
   .icon-btn {
     background: rgba(255, 255, 255, 0.05);
@@ -245,11 +256,7 @@
     transform: scale(1.1);
   }
   
-  /* زر القائمة */
-  .navbar-toggler {
-    color: var(--primary-color);
-  }
-  
+
   .menu-icon {
     max-height: 28px;
   }
@@ -764,4 +771,142 @@
     opacity: 1;
   }
   
+/* ========== Mobile Responsiveness ========== */
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden !important;
+      }
+    
+      html {
+        overflow-x: hidden !important;
+      }
+    
+      .container,
+      .row,
+      .main-navbar,
+      header,
+      section {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+      }
+
+    /* HERO SECTION */
+    .hero-text h1 {
+      font-size: 2.5rem;
+    }
+  
+    .hero-text h3 {
+      font-size: 1.1rem;
+    }
+  
+    .hero-section {
+      padding-top: 80px;
+    }
+  
+    /* BUTTONS */
+    .hero-section .btn-primary,
+    .btn-modern {
+      padding: 0.6rem 1.2rem;
+      font-size: 0.95rem;
+    }
+  
+    /* SOCIAL ICONS */
+    .social-links i {
+      font-size: 1.5rem;
+      padding: 0.5rem;
+    }
+  
+    .contact-banner .social-icons {
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+  
+    /* TESTIMONIAL SWIPER */
+    .testimonial-swiper .swiper-slide {
+      max-width: 95%;
+    }
+  
+    .testimonial-box {
+      padding: 1.5rem;
+      font-size: 0.95rem;
+    }
+  
+    .name {
+      font-size: 1rem;
+    }
+  
+    .designation {
+      font-size: 0.85rem;
+    }
+  
+    /* STATS SECTION */
+    .stat-box h1 {
+      font-size: 2.4rem;
+    }
+  
+    .stat-box h3 {
+      font-size: 1rem;
+    }
+  
+    /* ABOUT SECTION */
+    .about-infinityteam {
+      padding: 3rem 1rem;
+    }
+  
+    .about-title {
+      font-size: 1.8rem;
+    }
+  
+    .about-infinityteam p {
+      font-size: 1rem;
+    }
+  
+    .about-infinityteam .about-image {
+      max-width: 90%;
+      margin-top: 2rem;
+    }
+  
+    /* CONTACT SECTION */
+    .contact-banner h1 {
+      font-size: 1.6rem;
+    }
+  
+    .contact-banner p {
+      font-size: 1rem;
+    }
+  
+    /* FOOTER */
+    .footer-social {
+      gap: 1rem;
+    }
+  
+    .footer-copy {
+      font-size: 0.9rem;
+    }
+  
+    .back-to-top-icon {
+      bottom: 20px;
+      right: 20px;
+      padding: 0.6rem;
+      font-size: 1rem;
+    }
+  }
+  .navbar-collapse {
+    flex-grow: 1 !important;
+  }
+  
+  @media (max-width: 768px) {
+    .main-navbar {
+        transform: none !important;
+        left: 0;
+      }
+  
+    .navbar-collapse {
+      width: 100% !important;
+      margin-top: 0.5rem;
+      background-color: var(--bg-color); 
+      border-radius: 12px;
+      padding: 1rem;
+    }
+  }
               
