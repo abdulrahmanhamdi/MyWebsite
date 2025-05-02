@@ -17,78 +17,77 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" /> 
 
 
+
 <!-- Google Font -->
 <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Open+Sans:300,400,700" rel="stylesheet">
 </head>
 
 <body>
 <!-- Top Navigation Bar -->
-<nav class="top-navbar">
-  <div class="container navbar-content">
+<nav class="navbar navbar-expand-md main-navbar shadow-sm rounded-4 mt-2">
+  <div class="container-fluid d-flex justify-content-between align-items-center px-4">
 
-    <!-- يسار الشريط: الشعار + البحث -->
-    <div class="navbar-left">
-      <a href="index.html" class="logo-only">
-        <img src="assets/logo_home2.png" alt="Abdulrahman Hamdi Home Page Logo" class="big-logo">
+    <!-- Left: Logo + Dark Mode -->
+    <div class="d-flex align-items-center gap-3">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="assets/logo_home2.png" alt="Logo" class="big-logo">
       </a>
 
-      <!-- ✅ نموذج البحث بجانب الشعار -->
-      <form class="search-form-inline" role="search" id="searchForm">
-        <input class="form-control form-control-sm rounded-pill" type="search" placeholder="Search..." aria-label="Search" id="searchInput">
+      <!-- Dark mode toggle -->
+      <button id="modeToggle" class="icon-btn" title="Toggle Dark Mode">
+        <i id="modeIcon" class="bi bi-brightness-high-fill"></i>
+      </button>
+    </div>
+
+    <!-- Navbar collapse button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+      <i class="bi bi-list"></i>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+
+      <!-- Search form -->
+      <form class="d-flex ms-3" role="search" id="searchForm">
+        <input class="form-control form-control-sm rounded-pill me-2" type="search" placeholder="Search..." aria-label="Search" id="searchInput">
         <button class="search-icon-btn btn btn-sm rounded-pill" type="submit">
           <i class="bi bi-search"></i>
         </button>
       </form>
-    </div>
 
-    <!-- زر القائمة للهاتف -->
-    <div class="menu-toggle" id="menu-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+      <!-- Search navigation box -->
+      <div id="search-nav" class="search-nav-box d-none">
+        <span id="match-info">0/0</span>
+        <button id="prevMatch" class="nav-btn" title="Previous">
+          <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M8 4l4 4H4z"/>
+          </svg>
+        </button>
+        <button id="nextMatch" class="nav-btn" title="Next">
+          <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M8 12l4-4H4z"/>
+          </svg>
+        </button>
+        <button id="closeMatch" class="nav-btn" title="Close">
+          <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M4.646 4.646a.5.5 0 011 .708L5.707 6l.939.939a.5.5 0 11-.707.707L5 6.707l-.939.939a.5.5 0 11-.707-.707L4.293 6l-.939-.939a.5.5 0 11.707-.707L5 5.293l.939-.939a.5.5 0 11.707.707L5.707 6z"/>
+          </svg>
+        </button>
+      </div>
 
-    <!-- روابط التنقل -->
-    <div class="navbar-right" id="navbar-right">
-      <ul class="main-nav">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="infinityteam.html">Infinity Team</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="resume.html">My Resume</a></li>
-        <li><a href="contact.html">Contact</a></li>
+      <!-- Navigation links -->
+      <ul class="navbar-nav gap-4 ms-4">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="infinityteam.html">Infinity Team</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="resume.html">My Resume</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
 
-      <!-- زر الوضع الليلي -->
-      <div class="dark-mode-toggle" onclick="toggleDarkMode()">
-        <span id="mode-icon" style="font-size: 24px; cursor: pointer;">🌙</span>
-      </div>
     </div>
-
-    <!-- صندوق التنقل بين نتائج البحث -->
-    <div id="search-nav" class="search-nav-box d-none">
-      <span id="match-info">0/0</span>
-
-      <button id="prevMatch" class="nav-btn" title="Previous">
-        <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor">
-          <path d="M8 4l4 4H4z"/>
-        </svg>
-      </button>
-
-      <button id="nextMatch" class="nav-btn" title="Next">
-        <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor">
-          <path d="M8 12l4-4H4z"/>
-        </svg>
-      </button>
-
-      <button id="closeMatch" class="nav-btn" title="Close">
-        <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor">
-          <path d="M4.646 4.646a.5.5 0 011 .708L5.707 6l.939.939a.5.5 0 11-.707.707L5 6.707l-.939.939a.5.5 0 11-.707-.707L4.293 6l-.939-.939a.5.5 0 11.707-.707L5 5.293l.939-.939a.5.5 0 11.707.707L5.707 6z"/>
-        </svg>
-      </button>
-    </div>
-
   </div>
 </nav>
+
 
 <!-- Contact Section -->
 <section class="contact-banner">
@@ -163,11 +162,13 @@
 <script src="js/swiper.jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/jquery.counterup.min.js"></script>
 <script src="js/script.js"></script>
 
 <!-- EmailJS SDK & Custom Script -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
 <script>
   emailjs.init("6sI2w087pXXbjM8TR");
 
