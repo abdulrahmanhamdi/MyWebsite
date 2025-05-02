@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Math 2 | Infinity Team</title>
+
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styleit.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+  
+
+
+
+  <!-- Audio and Effects -->
+  <audio id="click-sound" src="../assets/click.mp3"></audio>
+  <audio id="mode-sound" src="../assets/mode-toggle.mp3"></audio>
+  <style>
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      top: 0;
+      left: 0;
+    }
+    .cursor-glow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 300px;
+      height: 300px;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(34,211,238,0.25) 20%, transparent 60%);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+      transition: opacity 0.2s ease-out;
+      opacity: 0.4;
+      mix-blend-mode: screen;
+      filter: blur(60px);
+    }
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>
+  <div class="cursor-glow"></div>
+
+
+
+<nav class="navbar navbar-expand-md main-navbar shadow-sm rounded-4 mt-2">
+    <div class="container-fluid d-flex justify-content-between align-items-center px-4">
+      <div class="d-flex align-items-center gap-3">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+          <img src="../assets/logo.png" alt="INFINITY TEAM" class="logo" style="max-height: 50px;">
+        </a>
+        <button id="muteToggle" class="icon-btn"><i id="muteIcon" class="bi bi-volume-up-fill"></i></button>
+        <button id="modeToggle" class="icon-btn"><i id="modeIcon" class="bi bi-brightness-high-fill"></i></button>
+      </div>
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+        <i class="bi bi-list"></i>
+      </button>
+      <button id="sidebarToggle" class="icon-btn">
+        <i class="bi bi-list"></i> 
+      </button>
+  
+      <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+        <ul class="navbar-nav gap-4">
+            <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#midterms-finals">Solution Videos</a></li>
+            <li class="nav-item"><a class="nav-link" href="#quizzes">Solution PDF</a></li>
+            <li class="nav-item"><a class="nav-link" href="#lecture-videos">Lecture Videos</a></li>
+            <li class="nav-item"><a class="nav-link" href="#lecture-notes">Lecture Notes</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>    
+      </div>
+    </div>
+  </nav>
+  <aside id="sidebar" class="sidebar">
+    <button id="closeSidebar" class="close-btn"><i class="bi bi-x-lg"></i></button>
+    <ul class="sidebar-menu">
+        <li><a href="../index.html"><i class="bi bi-house-door me-2"></i> Home</a></li>
+        <li><a href="../resume.html"><i class="bi bi-file-earmark-person me-2"></i> Resume</a></li>
+        <li><a href="../blog.html"><i class="bi bi-journals me-2"></i> Blog</a></li>
+        <li><a href="../services.html"><i class="bi bi-briefcase-fill me-2"></i> Services</a></li>
+        <li><a href="../infinityteam.html"><i class="bi bi-easel2-fill me-2"></i> Infinity Team</a></li>
+        <li><a href="../contact.html"><i class="bi bi-envelope-fill me-2"></i> Contact</a></li>
+        <li><a href="../about.html"><i class="bi bi-info-circle-fill me-2"></i> About</a></li>
+      </ul>
+      
+  </aside>
+  
+  <header id="hero" class="hero-section text-center d-flex align-items-center justify-content-center">
+    <div class="container hero-content">
+      <h1><span class="gradient-text">Welcome</span><br>to <span class="text-brand">Mathematics II Course.</span></h1>
+      <h3 class="subtitle">Mastering Integrals, Applications, and Series</h3>
+      <a href="#lecture-videos" class="btn btn-primary btn-lg mt-4">Start Learning</a>
+  
+      <!-- Social Links -->
+      <div class="social-links mt-5">
+        <p class="text-muted">Follow for study resources & updates</p>
+        <ul class="d-flex justify-content-center gap-4 list-unstyled mt-2">
+          <li><a href="https://www.linkedin.com/in/abdulrahman-hamdi-54a8a6143/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
+          <li><a href="https://www.instagram.com/98abdulrahmanhamdi/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+          <li><a href="https://x.com/abdulrahmanh524" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
+          <li><a href="https://github.com/abdulrahmanhamdi" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  
+  
+  
+  
+  
+  
+
+<!-- Course Materials Section -->
+<section class="course-materials">
+    <div class="container">
+      <h2 class="section-heading blue">Course Materials & Resources</h2>
+  
+      <!-- Midterms and Finals -->
+      <article id="midterms-finals" class="material-card">
+        <h3 class="material-title">Soon</h3>
+        <div class="material-content">
+          <ul class="resource-list">
+          </ul>
+        </div>
+      </article>
+  
+      <!-- Quizzes -->
+      <article id="quizzes" class="material-card">
+        <h3 class="material-title">Soon</h3>
+        <div class="material-content">
+          <ul class="resource-list">
+          </ul>
+        </div>
+      </article>
+  
+      <!-- Lecture Videos -->
+      <article id="lecture-videos" class="material-card">
+        <h3 class="material-title">Lecture Videos</h3>
+        <div class="material-content">
+          <ul class="resource-list">
+            <li>Complete Course Videos<a href="https://www.youtube.com/watch?v=d5lqwccgwJk&list=PL5hH7n-uQFAmw2Z3ruH-teNgGoLV1ECYC&pp=0gcJCV8EOCosWNin" class="resource-link" target="_blank">Watch</a></li>
+          </ul>
+        </div>
+      </article>
+  
+      <!-- Lecture Notes -->
+      <article id="lecture-notes" class="material-card">
+        <h3 class="material-title">Lecture Notes</h3>
+        <div class="material-content">
+          <ul class="resource-list">
+            <li>Complete Course Notes <a href="../assets/PDF/math/Notlar math2.pdf" class="resource-link" target="_blank">Download PDF</a></li>
+          </ul>
+        </div>
+      </article>
+      
+    </div>
+  </section>
+  <section id="about" class="about-algorithm-course">
+    <div class="container">
+      <h2 class="section-heading gradient-text">About This Course</h2>
+      <div class="about-text-box">
+        <p>
+          Mathematics II continues the study of calculus by focusing on integral calculus and its powerful applications. The course builds upon the foundational concepts learned in Mathematics I and equips students with essential tools to solve problems involving accumulation, area, and approximation.
+        </p>
+        <p>
+          Students begin by exploring indefinite and definite integrals, antiderivatives, and the Fundamental Theorem of Calculus. The course then introduces various techniques of integration including substitution, integration by parts, partial fractions, and trigonometric integrals.
+        </p>
+        <p>
+          Applications of integrals—such as computing area between curves, volume of solids of revolution, arc length, and work—are emphasized throughout the course to solidify understanding through real-world contexts.
+        </p>
+        <p>
+          Later topics include sequences and infinite series, convergence tests, power series, and representations of functions as Taylor and Maclaurin series, which are foundational in advanced mathematics, physics, and engineering.
+        </p>
+        <p class="instructor">Instructor: <span>Eng. Abdulrahman Hamdi</span></p>
+      </div>
+    </div>
+  </section>
+  
+  
+  
+  <section id="contact" class="contact-banner">
+    <div class="container">
+      <h1>Need help with a concept or topic?</h1>
+      <p>I’m available to discuss your challenges in math, programming, or university courses. Let’s solve it together.</p>
+  
+      <div class="social-icons mt-4">
+        <a href="https://www.linkedin.com/in/abdulrahman-hamdi-54a8a6143/" target="_blank" title="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://wa.me/905314551282" target="_blank" title="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="mailto:abdulrahmanh524@gmail.com" target="_blank" title="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+  </section>  
+    
+  
+  <footer class="site-footer">
+    <div class="container text-center">
+      <div class="footer-social mt-3">
+        <a href="https://www.linkedin.com/in/abdulrahman-hamdi-54a8a6143/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/98abdulrahmanhamdi/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com/abdulrahmanh524" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://github.com/abdulrahmanhamdi" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+  
+      <p class="footer-copy mt-4">© 2025 Abdulrahman Hamdi — All rights reserved.</p>
+      <a href="#" class="back-to-top-icon" title="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+      </a>
+          </div>
+  </footer>
+  
+          
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <script src="../js/scriptit.js"></script>
+</body>
+</html>
