@@ -182,3 +182,10 @@ document.querySelector('.back-to-top-icon').addEventListener('click', function (
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
+  document.getElementById("sidebarToggle").addEventListener("click", function () {
+    document.getElementById("sidebar").classList.add("active");
+  });
+
+  document.getElementById("closeSidebar").addEventListener("click", function () {
+    document.getElementById("sidebar").classList.remove("active");
+  });

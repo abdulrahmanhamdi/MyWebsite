@@ -68,19 +68,39 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
         <i class="bi bi-list"></i>
       </button>
-      
+      <button id="sidebarToggle" class="icon-btn">
+        <i class="bi bi-list"></i> 
+      </button>
   
       <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
         <ul class="navbar-nav gap-4">
-          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Infinity team</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">My Resume</a></li>
-        </ul>
+            <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
+            <li class="nav-item"><a class="nav-link" href="#timeline">Learning Path</a></li>
+            <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+            <li class="nav-item"><a class="nav-link" href="#stats">Statistics</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+          
       </div>
     </div>
   </nav>
+  <aside id="sidebar" class="sidebar">
+    <button id="closeSidebar" class="close-btn"><i class="bi bi-x-lg"></i></button>
+    <ul class="sidebar-menu">
+        <li><a href="index.html"><i class="bi bi-house-door me-2"></i> Home</a></li>
+        <li><a href="resume.html"><i class="bi bi-file-earmark-person me-2"></i> Resume</a></li>
+        <li><a href="blog.html"><i class="bi bi-journals me-2"></i> Blog</a></li>
+        <li><a href="services.html"><i class="bi bi-briefcase-fill me-2"></i> Services</a></li>
+        <li><a href="infinityteam.html"><i class="bi bi-easel2-fill me-2"></i> Infinity Team</a></li>
+        <li><a href="contact.html"><i class="bi bi-envelope-fill me-2"></i> Contact</a></li>
+        <li><a href="about.html"><i class="bi bi-info-circle-fill me-2"></i> About</a></li>
+      </ul>
+      
+  </aside>
   
-  <header class="hero-section text-center d-flex align-items-center justify-content-center">
+  <header id="hero" class="hero-section text-center d-flex align-items-center justify-content-center">
     <div class="container hero-content">
       <h1><span class="gradient-text">Welcome</span><br>to <span class="text-brand">Infinity Team.</span></h1>
       <h3 class="subtitle">Math and Programming</h3>
@@ -100,7 +120,7 @@
   </header>
   
 
-  <section class="courses-grid-section">
+  <section id="courses" class="courses-grid-section">
     <div class="container">
         <h2 class="courses-heading-section">
             <span class="highlight">My</span> Courses
@@ -114,7 +134,7 @@
           <p class="course-desc">
             Learn the basics of algorithm design, analysis and complexity. Includes recursive thinking, sorting, greedy, and dynamic programming.
           </p>
-          <a href="#" class="btn-modern">DETAILS</a>
+          <a href="aad.html" class="btn-modern" target="_blank">DETAILS</a>
         </div>
   
         <div class="course-card-modern">
@@ -123,7 +143,7 @@
           <p class="course-desc">
             Covers probability theory, distributions, expected values, variance, and data analysis techniques used in statistics.
           </p>
-          <a href="#" class="btn-modern">DETAILS</a>
+          <a href="probabilitystatistic.html" class="btn-modern" target="_blank">DETAILS</a>
         </div>
   
         <div class="course-card-modern">
@@ -193,7 +213,7 @@
     </div>
   </section>
   
-  <section class="course-timeline">
+  <section id="timeline" class="course-timeline">
     <h2 class="timeline-heading">Learning Path To AI and Data science</h2>
     <div class="timeline">
   
@@ -264,8 +284,8 @@
     </div>
   </section>
 
-<section class="testimonial">
-  <h2 class="section-heading">What Students Say</h2>
+  <section id="testimonials" class="testimonial">
+    <h2 class="section-heading">What Students Say</h2>
 
   <div class="swiper testimonial-swiper">
     <div class="swiper-wrapper">
@@ -314,7 +334,7 @@
 
       <div class="swiper-slide testimonial-box">
         <p>“Beautiful design, helpful explanations. I return to this site before every exam.”</p>
-        <h4 class="name">Alghina</h4>
+        <h4 class="name">Alghena</h4>
         <span class="designation">CS Engineering Student Cumhuriyet</span>
       </div>
 
@@ -353,7 +373,7 @@
   
 
   
-  <section class="stats">
+<section id="statistics" class="stats">
     <div class="container">
       <div class="row">
         <div class="col-md-4 text-center stat-box">
@@ -371,7 +391,7 @@
       </div>
     </div>
   </section>
-  <section class="about-infinityteam">
+  <section id="about" class="about-infinityteam">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-6">
@@ -396,7 +416,7 @@
     </div>
   </section>
   
-  <section class="contact-banner">
+  <section id="contact" class="contact-banner">
     <div class="container">
       <h1>Need help with a concept or topic?</h1>
       <p>I’m available to discuss your challenges in math, programming, or university courses. Let’s solve it together.</p>
