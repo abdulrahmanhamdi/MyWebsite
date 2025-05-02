@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Infinity Team</title>
+
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styleit.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+  
+
+
+
+  <!-- Audio and Effects -->
+  <audio id="click-sound" src="assets/click.mp3"></audio>
+  <audio id="mode-sound" src="assets/mode-toggle.mp3"></audio>
+  <style>
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      top: 0;
+      left: 0;
+    }
+    .cursor-glow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 300px;
+      height: 300px;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(34,211,238,0.25) 20%, transparent 60%);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+      transition: opacity 0.2s ease-out;
+      opacity: 0.4;
+      mix-blend-mode: screen;
+      filter: blur(60px);
+    }
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>
+  <div class="cursor-glow"></div>
+
+
+
+<nav class="navbar navbar-expand-lg main-navbar shadow-sm rounded-4 mt-2">
+    <div class="container-fluid d-flex justify-content-between align-items-center px-4">
+      <div class="d-flex align-items-center gap-3">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+          <img src="assets/logo.png" alt="INFINITY TEAM" class="logo" style="max-height: 50px;">
+        </a>
+        <button id="muteToggle" class="icon-btn"><i id="muteIcon" class="bi bi-volume-up-fill"></i></button>
+        <button id="modeToggle" class="icon-btn"><i id="modeIcon" class="bi bi-brightness-high-fill"></i></button>
+      </div>
+  
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+        <ul class="navbar-nav gap-4">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Infinity team</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">My Resume</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <header class="hero-section text-center d-flex align-items-center justify-content-center">
+    <div class="container hero-content">
+      <h1><span class="gradient-text">Welcome</span><br>to <span class="text-brand">Infinity Team.</span></h1>
+      <h3 class="subtitle">Math and Programming</h3>
+      <a href="https://www.youtube.com/@infinityteam2098/playlists" class="btn btn-primary btn-lg mt-4">Know More</a>
+  
+      <!-- Social Links -->
+      <div class="social-links mt-5">
+        <p class="text-muted">Join me here</p>
+        <ul class="d-flex justify-content-center gap-4 list-unstyled mt-2">
+          <li><a href="https://www.linkedin.com/in/abdulrahman-hamdi-54a8a6143/"><i class="fa-brands fa-linkedin-in"></i></a></li>
+          <li><a href="https://www.instagram.com/98abdulrahmanhamdi/"><i class="fa-brands fa-instagram"></i></a></li>
+          <li><a href="https://x.com/abdulrahmanh524"><i class="fa-brands fa-x-twitter"></i></a></li>
+          <li><a href="https://github.com/abdulrahmanhamdi"><i class="fa-brands fa-github"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  
+
+  <section class="courses-grid-section">
+    <div class="container">
+        <h2 class="courses-heading-section">
+            <span class="highlight">My</span> Courses
+          </h2>
+          <div class="underline-bar"></div>                  
+      <div class="courses-grid">
+  
+        <div class="course-card-modern">
+          <h3 class="course-title">Algorithm Analysis & Design</h3>
+          <span class="course-meta small-meta">Computer Science and AI</span>
+          <p class="course-desc">
+            Learn the basics of algorithm design, analysis and complexity. Includes recursive thinking, sorting, greedy, and dynamic programming.
+          </p>
+          <a href="#" class="btn-modern">DETAILS</a>
+        </div>
+  
+        <div class="course-card-modern">
+          <h3 class="course-title">Probability and Statistics</h3>
+          <span class="course-meta small-meta">Computer Science and AI</span>
+          <p class="course-desc">
+            Covers probability theory, distributions, expected values, variance, and data analysis techniques used in statistics.
+          </p>
+          <a href="#" class="btn-modern">DETAILS</a>
+        </div>
+  
+        <div class="course-card-modern">
+          <h3 class="course-title">Differential Equations</h3>
+          <span class="course-meta small-meta">Mathematics</span>
+          <p class="course-desc">
+            Learn how to solve ordinary differential equations and their applications in physics and engineering.
+          </p>
+          <a href="#" class="btn-modern">DETAILS</a>
+        </div>
+  
+        <div class="course-card-modern">
+          <h3 class="course-title">Linear Algebra</h3>
+          <span class="course-meta small-meta">Computer Science and AI</span>
+          <p class="course-desc">
+            Study matrices, vector spaces, linear transformations, eigenvalues, and systems of linear equations.
+          </p>
+          <a href="#" class="btn-modern">DETAILS</a>
+        </div>
+  
+        <div class="course-card-modern">
+          <h3 class="course-title">Math 1</h3>
+          <span class="course-meta small-meta">Engineering and other faculties</span>
+          <p class="course-desc">
+            Introduction to calculus including limits, derivatives, and applications of differential calculus.
+          </p>
+          <a href="#" class="btn-modern">DETAILS</a>
+        </div>
+  
+        <div class="course-card-modern">
+          <h3 class="course-title">Math 2</h3>
+          <span class="course-meta small-meta">Engineering and other faculties</span>
+          <p class="course-desc">
+            Continuation of Math 1, covering integral calculus, techniques of integration, and applications.
+          </p>
+          <a href="#" class="btn-modern">DETAILS</a>
+        </div>
+  
+        <div class="course-card-modern">
+          <h3 class="course-title">Physics 2</h3>
+          <span class="course-meta small-meta">Engineering and other faculties</span>
+          <p class="course-desc">
+            Topics include electromagnetism, waves, optics, and basic modern physics concepts.
+          </p>
+          <a href="#" class="btn-modern">DETAILS</a>
+        </div>
+  
+        <div class="course-card-modern">
+          <h3 class="course-title">Programming Java</h3>
+          <span class="course-meta small-meta">Computer Science</span>
+          <p class="course-desc">
+            Learn Java programming fundamentals including OOP concepts, loops, arrays, and GUI basics.
+          </p>
+          <a href="#" class="btn-modern">DETAILS</a>
+        </div>
+  
+        <div class="course-card-modern">
+          <h3 class="course-title">Signal and System</h3>
+          <span class="course-meta small-meta">Computer and Electrical Engineering</span>
+          <p class="course-desc">
+            Study the basics of signal processing, linear systems, Fourier transforms, and time-domain analysis.
+          </p>
+          <a href="#" class="btn-modern">DETAILS</a>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+  <section class="course-timeline">
+    <h2 class="timeline-heading">Learning Path To AI and Data science</h2>
+    <div class="timeline">
+  
+      <div class="timeline-item">
+        <div class="dot"><i class="bi bi-calculator"></i></div>
+        <div class="content">
+          <h3>Math 1</h3>
+          <p>Introduction to algebra, calculus, and trigonometry for engineers.</p>
+        </div>
+      </div>
+  
+      <div class="timeline-item">
+        <div class="dot"><i class="bi bi-calculator"></i></div>
+        <div class="content">
+          <h3>Math 2</h3>
+          <p>Advanced calculus techniques including integration and applications.</p>
+        </div>
+      </div>
+  
+      <div class="timeline-item">
+        <div class="dot"><i class="bi-grid-3x3-gap"></i></div>
+        <div class="content">
+          <h3>Linear Algebra</h3>
+          <p>Matrices, vector spaces, linear transformations, and eigenvalues.</p>
+        </div>
+      </div>
+  
+      <div class="timeline-item">
+        <div class="dot"><i class="bi-code-slash"></i></div>
+        <div class="content">
+          <h3>Algorithm and Programming</h3>
+          <p>Basic principles of programming and algorithm design using Java.</p>
+        </div>
+      </div>
+  
+      <div class="timeline-item">
+        <div class="dot"><i class="bi-123"></i></div>
+        <div class="content">
+          <h3>Discrete Mathematics</h3>
+          <p>Logic, set theory, functions, relations, combinatorics and graph theory.</p>
+        </div>
+      </div>
+  
+      <div class="timeline-item">
+        <div class="dot"><i class="bi-diagram-3"></i></div>
+        <div class="content">
+          <h3>Data Structure</h3>
+          <p>Introduction to arrays, stacks, queues, linked lists, trees, and graphs.</p>
+        </div>
+      </div>
+  
+      <div class="timeline-item">
+        <div class="dot"><i class="bi-bar-chart"></i></div>
+        <div class="content">
+          <h3>Probability and Statistics</h3>
+          <p>Probability theory, distributions, expected value, and statistical analysis.</p>
+        </div>
+      </div>
+  
+      <div class="timeline-item">
+        <div class="dot"><i class="bi-cpu"></i></div>
+        <div class="content">
+          <h3>Algorithm Analysis and Design</h3>
+          <p>Complexity, recursive thinking, greedy and dynamic programming.</p>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+
+<section class="testimonial">
+  <h2 class="section-heading">What Students Say</h2>
+
+  <div class="swiper testimonial-swiper">
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide testimonial-box">
+        <p>“The teaching method made everything easier. I never understood Math 2 until now.”</p>
+        <h4 class="name">Khaled</h4>
+        <span class="designation">CS Engineering Student Cumhuriyet</span>
+      </div>
+
+      <div class="swiper-slide testimonial-box">
+        <p>“Algorithms used to scare me. Now they make sense — all thanks to these courses.”</p>
+        <h4 class="name">Ahmad</h4>
+        <span class="designation">CS Engineering Student Cumhuriyet</span>
+      </div>
+
+      <div class="swiper-slide testimonial-box">
+        <p>“This platform helped me improve my GPA significantly. Truly grateful.”</p>
+        <h4 class="name">Mohamed</h4>
+        <span class="designation">CS Engineering Student Sakarya</span>
+      </div>
+
+      <div class="swiper-slide testimonial-box">
+        <p>“Best explanation of Linear Algebra I’ve found online. Very clear and structured.”</p>
+        <h4 class="name">Omar</h4>
+        <span class="designation">EE Engineering Student Karabuk</span>
+      </div>
+
+      <div class="swiper-slide testimonial-box">
+        <p>“The Java course was perfect — project-based and straight to the point.”</p>
+        <h4 class="name">Abdulrahman</h4>
+        <span class="designation">Civ Engineering Student Karabuk</span>
+      </div>
+
+      <div class="swiper-slide testimonial-box">
+        <p>“Data Structures explained here are better than in my university lectures.”</p>
+        <h4 class="name">Faez</h4>
+        <span class="designation">Civ Engineering Student Karabuk</span>
+      </div>
+
+      <div class="swiper-slide testimonial-box">
+        <p>“I finally understood probability thanks to these visual and simple examples.”</p>
+        <h4 class="name">Sidra</h4>
+        <span class="designation">CS Engineering Student Cumhuriyet</span>
+      </div>
+
+      <div class="swiper-slide testimonial-box">
+        <p>“Beautiful design, helpful explanations. I return to this site before every exam.”</p>
+        <h4 class="name">Alghina</h4>
+        <span class="designation">CS Engineering Student Cumhuriyet</span>
+      </div>
+
+      <div class="swiper-slide testimonial-box">
+        <p>“I like the structure — every topic is followed by clear examples.”</p>
+        <h4 class="name">Edip</h4>
+        <span class="designation">CS Engineering Student Cumhuriyet</span>
+      </div>
+
+      <div class="swiper-slide testimonial-box">
+        <p>“Thanks for providing these lessons free and so professionally.”</p>
+        <h4 class="name">Mohammad</h4>
+        <span class="designation">YÖS Student</span>
+      </div>
+
+      <div class="swiper-slide testimonial-box">
+        <p>“All my classmates use this site now — it’s a game-changer.”</p>
+        <h4 class="name">Mostafa</h4>
+        <span class="designation">CS Engineering Student Cumhuriyet</span>
+      </div>
+
+      <div class="swiper-slide testimonial-box">
+        <p>“Perfect for self-study. The structure and content are professional.”</p>
+        <h4 class="name">Saad</h4>
+        <span class="designation">CS Engineering Student Cumhuriyet</span>
+      </div>
+
+    </div>
+
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+  
+
+  
+  <section class="stats">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center stat-box">
+          <h1 class="blue"><span class="counter">250</span></h1>
+          <h3>Hours</h3>
+        </div>
+        <div class="col-md-4 text-center stat-box">
+          <h1 class="bluedark counter">10</h1>
+          <h3>Courses</h3>
+        </div>
+        <div class="col-md-4 text-center stat-box">
+          <h1 class="bluelight"><span class="counter">1500</span>k</h1>
+          <h3>Number of students</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="about-infinityteam">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h2 class="about-title">About Infinity Team</h2>
+          <p>
+            Welcome to the Infinity Team Channel! We're thrilled to have you join our vibrant community.
+            At Infinity, our mission is to make the exchange of ideas and information as seamless and effective as possible.
+          </p>
+          <p>
+            At Infinity Team, we are dedicated to solving complex mathematical problems and developing
+            cutting-edge programming solutions.
+          </p>
+          <p>
+            We pride ourselves on our commitment to excellence and our passion for continuous learning and growth.
+          </p>
+          <p class="since">Founded in 2020</p>
+        </div>
+        <div class="col-md-6 text-center">
+            <img src="assets/logo-transparent.png" class="about-image">
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="contact-banner">
+    <div class="container">
+      <h1>Need help with a concept or topic?</h1>
+      <p>I’m available to discuss your challenges in math, programming, or university courses. Let’s solve it together.</p>
+  
+      <div class="social-icons mt-4">
+        <a href="https://www.linkedin.com/in/abdulrahman-hamdi-54a8a6143/" target="_blank" title="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://wa.me/905314551282" target="_blank" title="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="mailto:abdulrahmanh524@gmail.com" target="_blank" title="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <footer class="site-footer">
+    <div class="container text-center">
+      <div class="footer-social mt-3">
+        <a href="https://www.linkedin.com/in/abdulrahman-hamdi-54a8a6143/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/98abdulrahmanhamdi/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com/abdulrahmanh524" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://github.com/abdulrahmanhamdi" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+  
+      <p class="footer-copy mt-4">© 2025 Abdulrahman Hamdi — All rights reserved.</p>
+      <a href="#" class="back-to-top-icon" title="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+      </a>
+          </div>
+  </footer>
+  
+          
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <script src="js/scriptit.js"></script>
+</body>
+</html>
