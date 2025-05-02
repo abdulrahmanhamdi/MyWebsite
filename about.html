@@ -44,33 +44,67 @@
 <audio id="mode-sound" src="assets/mode-toggle.mp3"></audio>
 <!-- Navbar -->
 <nav id="navbar-example" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container-fluid d-flex justify-content-between align-items-center">
-      <div class="container-fluid d-flex align-items-center justify-content-between position-relative">
-        <a class="navbar-brand ms-auto" href="#">
-          <img src="assets/logo_home2.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-top rounded-circle">
-        </a>  
-        
-        <button class="icon-btn d-lg-block" type="button" data-bs-toggle="offcanvas" data-bs-target="#sideMenu">
-          <i class="bi bi-list"></i>
-        </button>
-        <button id="muteToggle" class="icon-btn ms-2">
-          <i id="muteIcon" class="ph-speaker-high"></i>
-        </button>
-        <div class="mobile-buttons d-flex d-lg-none align-items-center justify-content-center mx-auto">
-          <button id="modeToggle" class="icon-btn me-2">
-            <i id="modeIcon" class="bi bi-moon-fill"></i>
-          </button> 
-              
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+    <div class="container-fluid d-flex align-items-center justify-content-between position-relative">
+      <a class="navbar-brand ms-auto" href="#">
+        <img src="assets/logo_home2.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-top rounded-circle">
+      </a>
+
+      <!-- Offcanvas Button -->
+      <button class="icon-btn d-lg-block" type="button" data-bs-toggle="offcanvas" data-bs-target="#sideMenu">
+        <i class="bi bi-list"></i>
+      </button>
+
+      <!-- Mute Button -->
+      <button id="muteToggle" class="icon-btn ms-2">
+        <i id="muteIcon" class="ph-speaker-high"></i>
+      </button>
+
+      <!-- Mode Toggle for Mobile -->
+      <div class="mobile-buttons d-flex d-lg-none align-items-center justify-content-center mx-auto">
+        <button id="modeToggle" class="icon-btn me-2">
+          <i id="modeIcon" class="bi bi-moon-fill"></i>
+        </button> 
       </div>
+
+      <div class="search-wrapper d-none d-lg-flex align-items-center me-3" style="gap: 6px;">
+        <input id="searchInput" class="form-control" type="search" placeholder="Search..." aria-label="Search">
+        <button id="prevResultDesktop" class="icon-btn d-none d-lg-inline" title="Previous Match">
+          <i class="bi bi-chevron-up"></i>
+        </button>
+        <button id="nextResultDesktop" class="icon-btn d-none d-lg-inline" title="Next Match">
+          <i class="bi bi-chevron-down"></i>
+        </button>
+        <button id="closeSearchDesktop" class="icon-btn d-none d-lg-inline" title="Clear Search">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Search Icon -->
+      <button id="searchToggle" class="icon-btn d-lg-none">
+        <i class="bi bi-search"></i>
+      </button>
       
-      
-  
-      
-  
+      <!-- Mobile Search Modal -->
+      <div id="mobileSearchModal" class="mobile-search-modal">
+        <div class="mobile-search-box">
+          <input id="mobileSearchInput" type="search" placeholder="Search..." class="form-control">
+          <button id="prevResult" class="icon-btn" title="Previous Match">
+            <i class="bi bi-chevron-up"></i>
+          </button>
+          <button id="nextResult" class="icon-btn" title="Next Match">
+            <i class="bi bi-chevron-down"></i>
+          </button>
+          <button id="closeSearch" class="icon-btn" title="Close Search">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+      </div>
+
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
-  
+
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto align-items-center">
           <li class="nav-item d-none d-lg-block me-2">
@@ -83,7 +117,9 @@
         </ul>
       </div>
     </div>
-  </nav>
+  </div>
+</nav>
+
   <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="sideMenu">
     <div class="offcanvas-header">
       <h5 class="offcanvas-title">Pages</h5>
@@ -104,7 +140,7 @@
               <a class="nav-link text-info" href="services.html"><i class="bi bi-briefcase-fill me-2"></i> Services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-info" href="teaching.html"><i class="bi bi-easel2-fill me-2"></i> Teaching</a>
+              <a class="nav-link text-info" href="infinityteam.html"><i class="bi bi-easel2-fill me-2"></i> Infinity Team</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-info" href="contact.html"><i class="bi bi-envelope-fill me-2"></i> Contact</a>
@@ -258,6 +294,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script src="js/scriptabout.js"></script>
+<script src="js/scriptsearch.js"></script>
+
   
 </body>
 </html>

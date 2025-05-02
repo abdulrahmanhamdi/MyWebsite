@@ -68,7 +68,43 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
-  
+      <div class="search-wrapper d-none d-lg-flex align-items-center me-3" style="gap: 6px;">
+        <input id="searchInput" class="form-control" type="search" placeholder="Search..." aria-label="Search">
+        <button id="prevResultDesktop" class="icon-btn d-none d-lg-inline" title="Previous Match">
+          <i class="bi bi-chevron-up"></i>
+        </button>
+        <button id="nextResultDesktop" class="icon-btn d-none d-lg-inline" title="Next Match">
+          <i class="bi bi-chevron-down"></i>
+        </button>
+        <button id="closeSearchDesktop" class="icon-btn d-none d-lg-inline" title="Clear Search">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      
+      <!-- Mobile Search Icon -->
+      <button id="searchToggle" class="icon-btn d-lg-none">
+        <i class="bi bi-search"></i>
+      </button>
+      
+      <!-- Mobile Search Modal -->
+      <div id="mobileSearchModal" class="mobile-search-modal">
+        <div class="mobile-search-box">
+          <input id="mobileSearchInput" type="search" placeholder="Search..." class="form-control">
+          <button id="prevResult" class="icon-btn" title="Previous Match">
+            <i class="bi bi-chevron-up"></i>
+          </button>
+          <button id="nextResult" class="icon-btn" title="Next Match">
+            <i class="bi bi-chevron-down"></i>
+          </button>
+          <button id="closeSearch" class="icon-btn" title="Close Search">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+      </div>
+      
+
+      
+      
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto align-items-center">
           <li class="nav-item d-none d-lg-block me-2">
@@ -106,7 +142,7 @@
               <a class="nav-link text-info" href="services.html"><i class="bi bi-briefcase-fill me-2"></i> Services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-info" href="teaching.html"><i class="bi bi-easel2-fill me-2"></i> Teaching</a>
+              <a class="nav-link text-info" href="infinityteam.html"><i class="bi bi-easel2-fill me-2"></i> Infinity Team</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-info" href="contact.html"><i class="bi bi-envelope-fill me-2"></i> Contact</a>
@@ -279,7 +315,7 @@
       <h2 class="section-title">Work Experience</h2>
 
       <div class="job">
-        <h3>Junior Front-end Web Design <span>— Mar 2023 - Present</span></h3>
+        <h3>Front-end Web Design <span>— Mar 2023 - Present</span></h3>
         <ul>
           <li>Learned from YouTube, Udemy, W3Schools, Btkakademi.</li>
           <li>Developed interfaces using HTML5, JavaScript, CSS3.</li>
@@ -290,7 +326,7 @@
       </div>
 
       <div class="job">
-        <h3>Junior Backend Web <span>— Dec 2021 - Present</span></h3>
+        <h3>Backend Web <span>— Dec 2021 - Present</span></h3>
         <ul>
           <li>Learned backend from multiple platforms including Udemy & Btkakademi.</li>
           <li>Used JavaScript, Java, Python for backend development.</li>
@@ -300,7 +336,7 @@
       </div>
 
       <div class="job">
-        <h3>Junior Android Development <span>— Nov 2023 - Present</span></h3>
+        <h3>Android Development <span>— Nov 2023 - Present</span></h3>
         <ul>
           <li>Developed Android apps using Java and Kotlin.</li>
           <li>Designed UI/UX for Android platform.</li>
@@ -311,7 +347,7 @@
       </div>
 
       <div class="job">
-        <h3>Junior Data Science <span>— Sep 2024 - Present</span></h3>
+        <h3>Data Science <span>— Sep 2024 - Present</span></h3>
         <ul>
           <li>Studied AI, Deep Learning, Data Mining, Machine Learning, Image Processing.</li>
           <li>Worked on a GAN project using DCGAN for image generation.</li>
@@ -638,6 +674,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script src="js/scriptcv.js"></script>
+<script src="js/scriptsearch.js"></script>
+
   
 </body>
 </html>
