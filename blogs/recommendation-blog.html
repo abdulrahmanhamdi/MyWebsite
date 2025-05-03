@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Understanding Recommendation Systems</title>
+  <!-- Bootstrap -->
+  <link href="../css/bootstrap.css" rel="stylesheet">
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/bootstrap-theme.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/swiper.min.css">
+  <link id="theme-link" rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" /> 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Open+Sans:300,400,700" rel="stylesheet">
+</head>
+<body class="blog-page">
+
+    <nav class="navbar navbar-expand-md main-navbar shadow-sm rounded-4 mt-2">
+        <div class="container-fluid d-flex justify-content-between align-items-center px-4">
+      
+          <!-- Left: Logo + Dark Mode -->
+          <div class="d-flex align-items-center gap-3">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
+              <img src="../assets/logo_home2.png" alt="Logo" class="big-logo">
+            </a>
+      
+            <!-- Dark mode toggle -->
+            <button id="modeToggle" class="icon-btn" title="Toggle Dark Mode">
+              <i id="modeIcon" class="bi bi-brightness-high-fill"></i>
+            </button>
+          </div>
+      
+          <!-- Navbar collapse button -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+            <i class="bi bi-list"></i>
+          </button>
+      
+          <!-- Collapsible content -->
+          <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+      
+            <!-- Search form -->
+            <form class="d-flex ms-3" role="search" id="searchForm">
+              <input class="form-control form-control-sm rounded-pill me-2" type="search" placeholder="Search..." aria-label="Search" id="searchInput">
+              <button class="search-icon-btn btn btn-sm rounded-pill" type="submit">
+                <i class="bi bi-search"></i>
+              </button>
+            </form>
+      
+            <!-- Search navigation box -->
+            <div id="search-nav" class="search-nav-box d-none">
+              <span id="match-info">0/0</span>
+              <button id="prevMatch" class="nav-btn" title="Previous">
+                <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor">
+                  <path d="M8 4l4 4H4z"/>
+                </svg>
+              </button>
+              <button id="nextMatch" class="nav-btn" title="Next">
+                <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor">
+                  <path d="M8 12l4-4H4z"/>
+                </svg>
+              </button>
+              <button id="closeMatch" class="nav-btn" title="Close">
+                <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor">
+                  <path d="M4.646 4.646a.5.5 0 011 .708L5.707 6l.939.939a.5.5 0 11-.707.707L5 6.707l-.939.939a.5.5 0 11-.707-.707L4.293 6l-.939-.939a.5.5 0 11.707-.707L5 5.293l.939-.939a.5.5 0 11.707.707L5.707 6z"/>
+                </svg>
+              </button>
+            </div>
+      
+            <!-- Navigation links -->
+            <ul class="navbar-nav gap-4 ms-4">
+              <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="../infinityteam.html">Infinity Team</a></li>
+              <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+              <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="../resume.html">My Resume</a></li>
+              <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
+            </ul>
+      
+          </div>
+        </div>
+      </nav>
+      
+
+<section class="blog-section">
+        <div class="container">
+          <article class="blog-article">
+            <h1 class="text-center">Understanding Recommendation Systems</h1>
+            <p class="article-meta text-center text-muted small mb-4">
+              By <strong>Abdulrahman Hamdi</strong> | April 2025
+            </p>
+          
+            <figure>
+              <img src="../assets/recommendation.png" alt="Recommendation Systems Illustration" class="main-illustration">
+              <figcaption class="text-center text-muted small">
+                Illustration of recommendation systems used by platforms like Netflix, Amazon, and Spotify.
+              </figcaption>
+            </figure>
+          
+            <p class="lead">
+              In today's data-driven digital world, recommendation systems play a pivotal role in personalizing user experiences across e-commerce, entertainment, education, and beyond. These systems serve as intelligent guides, helping users navigate overwhelming amounts of content by surfacing relevant suggestions tailored to individual preferences.
+            </p>
+          
+            <h3>What is a Recommendation System?</h3>
+            <p>
+              A recommendation system, also known as a recommender system, is a subclass of information filtering systems. It seeks to predict the "rating" or "preference" that a user would give to an item. This prediction can be as simple as a binary "like/dislike" or as complex as estimating an exact rating score. These systems help users make decisions by presenting the most relevant items — whether products, movies, articles, or even friends.
+            </p>
+          
+            <h3>Types of Recommendation Systems</h3>
+            <ul>
+              <li><strong>Content-Based Filtering</strong>: Uses item features (genre, category, text, etc.) and user profiles to recommend similar items to those the user has liked before.</li>
+              <li><strong>Collaborative Filtering</strong>: Uses the behavior and preferences of similar users to generate suggestions. There are two main types: user-based and item-based collaborative filtering.</li>
+              <li><strong>Hybrid Systems</strong>: Combines both content and collaborative filtering, often using machine learning models to balance their influence.</li>
+            </ul>
+          
+            <h3>Mathematical Foundations</h3>
+            <p>
+              At the core of many systems is the concept of a user-item interaction matrix. Each row represents a user, each column an item, and the values reflect user ratings or interactions. Since most users interact with only a fraction of items, this matrix is sparse.
+            </p>
+            <p>
+              Matrix factorization methods like Singular Value Decomposition (SVD) and Alternating Least Squares (ALS) decompose this matrix into lower-dimensional latent factors, capturing underlying user and item features.
+            </p>
+          
+            <h3>Advanced Techniques</h3>
+            <p>
+              Modern systems incorporate deep learning for better generalization and representation. Autoencoders can compress interaction data into dense vectors, while attention-based models like Transformers can capture complex dependencies. Additionally, reinforcement learning is gaining traction in adaptive recommendation scenarios.
+            </p>
+          
+            <h3>Real-World Use Cases</h3>
+            <p>
+              - <strong>Netflix</strong>: Combines collaborative filtering and deep learning to suggest shows with high engagement probability.<br>
+              - <strong>Amazon</strong>: Uses item-to-item collaborative filtering and graph-based models to suggest complementary and similar items.<br>
+              - <strong>Spotify</strong>: Leverages audio embeddings, listening history, and collaborative patterns to personalize playlists.<br>
+              - <strong>Coursera</strong>: Recommends courses based on past enrollments, completion rates, and skill gaps.
+            </p>
+          
+            <h3>Challenges and Limitations</h3>
+            <ul>
+              <li><strong>Cold Start</strong>: Difficulty recommending items to new users or recommending new items due to lack of interaction data.</li>
+              <li><strong>Data Sparsity</strong>: Most users rate only a small fraction of available items, leading to sparse matrices that are hard to generalize from.</li>
+              <li><strong>Scalability</strong>: Large datasets require optimized algorithms and infrastructure to maintain performance.</li>
+              <li><strong>Bias and Fairness</strong>: Recommendations may reflect societal biases, requiring fairness-aware algorithms and audits.</li>
+            </ul>
+          
+            <blockquote class="blockquote text-center my-5">
+              <p>"Personalization isn’t magic — it's the result of learning user preferences from behavior, context, and intent."</p>
+            </blockquote>
+          
+            <h3>Sample Code: User-Based Collaborative Filtering</h3>
+            <pre><code>// Python: Cosine similarity for recommendation
+          from sklearn.metrics.pairwise import cosine_similarity
+          import pandas as pd
+          
+          # Sample user-item matrix
+          ratings = pd.DataFrame({
+            'User1': [5, 3, 0, 1],
+            'User2': [4, 0, 0, 1],
+            'User3': [1, 1, 0, 5],
+            'User4': [0, 0, 5, 4],
+            'User5': [1, 0, 4, 4],
+          }, index=['Item1', 'Item2', 'Item3', 'Item4']).T
+          
+          # Compute user similarity
+          similarity = cosine_similarity(ratings)
+          
+          # Output similarity matrix
+          similarity_df = pd.DataFrame(similarity, index=ratings.index, columns=ratings.index)
+          print(similarity_df)
+            </code></pre>
+          
+            <h3>Ethical Considerations</h3>
+            <p>
+              As recommendation systems shape digital consumption, designers must ensure transparency, privacy, and control. Algorithms should not lock users into filter bubbles, and explanations for recommendations are increasingly required for user trust and regulatory compliance (e.g., GDPR).
+            </p>
+          
+            <h3>Conclusion</h3>
+            <p>
+              Recommendation systems have evolved from basic rule-based engines to intelligent learning systems capable of dynamic personalization. As AI advances, these systems will become even more context-aware, adaptive, and human-centered — driving the next era of digital interaction.
+            </p>
+          
+            <div class="text-center mt-5">
+              <a href="../blog.html" class="btn btn-outline-primary px-4 py-2">
+                ← Back to Blog
+              </a>
+            </div>
+          </article>
+          
+        </div>
+
+        
+      </section>
+      
+
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="container text-center">
+      <div class="footer-social mt-3">
+        <a href="https://www.linkedin.com/in/abdulrahman-hamdi-54a8a6143/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/98abdulrahmanhamdi/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com/abdulrahmanh524" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://github.com/abdulrahmanhamdi" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+  
+      <p class="footer-copy mt-4">© 2025 Abdulrahman Hamdi — All rights reserved.</p>
+      <a href="#" class="back-to-top-icon" title="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+      </a>
+          </div>
+  </footer>
+  
+  <!-- Some Javascript -->
+  <script src="../js/jquery-2.1.1.js"></script>
+  <script src="js/swiper.jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="../js/jquery.counterup.min.js"></script>
+  <script src="../js/bootstrap.bundle.min.js"></script>
+  
+  <!-- External JS -->
+  <script src="../js/script.js"></script>
+  <script src="../js/search.js"></script>
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+</body>
+</html>

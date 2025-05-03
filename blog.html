@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog | Abdulrahman Hamdi</title>
+
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap-theme.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/swiper.min.css">
+  <link id="theme-link" rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" /> 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Open+Sans:300,400,700" rel="stylesheet">
+</head>
+
+<body class="blog-page">
+    <!-- Top Navigation Bar -->
+  <nav class="navbar navbar-expand-md main-navbar shadow-sm rounded-4 mt-2">
+    <div class="container-fluid d-flex justify-content-between align-items-center px-4">
+  
+      <!-- Left: Logo + Dark Mode -->
+      <div class="d-flex align-items-center gap-3">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+          <img src="assets/logo_home2.png" alt="Logo" class="big-logo">
+        </a>
+  
+        <!-- Dark mode toggle -->
+        <button id="modeToggle" class="icon-btn" title="Toggle Dark Mode">
+          <i id="modeIcon" class="bi bi-brightness-high-fill"></i>
+        </button>
+      </div>
+  
+      <!-- Navbar collapse button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+        <i class="bi bi-list"></i>
+      </button>
+  
+      <!-- Collapsible content -->
+      <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+  
+        <!-- Search form -->
+        <form class="d-flex ms-3" role="search" id="searchForm">
+          <input class="form-control form-control-sm rounded-pill me-2" type="search" placeholder="Search..." aria-label="Search" id="searchInput">
+          <button class="search-icon-btn btn btn-sm rounded-pill" type="submit">
+            <i class="bi bi-search"></i>
+          </button>
+        </form>
+  
+        <!-- Search navigation box -->
+        <div id="search-nav" class="search-nav-box d-none">
+          <span id="match-info">0/0</span>
+          <button id="prevMatch" class="nav-btn" title="Previous">
+            <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M8 4l4 4H4z"/>
+            </svg>
+          </button>
+          <button id="nextMatch" class="nav-btn" title="Next">
+            <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M8 12l4-4H4z"/>
+            </svg>
+          </button>
+          <button id="closeMatch" class="nav-btn" title="Close">
+            <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M4.646 4.646a.5.5 0 011 .708L5.707 6l.939.939a.5.5 0 11-.707.707L5 6.707l-.939.939a.5.5 0 11-.707-.707L4.293 6l-.939-.939a.5.5 0 11.707-.707L5 5.293l.939-.939a.5.5 0 11.707.707L5.707 6z"/>
+            </svg>
+          </button>
+        </div>
+  
+        <!-- Navigation links -->
+        <ul class="navbar-nav gap-4 ms-4">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="infinityteam.html">Infinity Team</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="resume.html">My Resume</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+  
+      </div>
+    </div>
+  </nav>
+  
+
+  <!-- Blog Section -->
+  <section class="blog-section">
+    <div class="container">
+      <h2 class="section-title text-center mb-4">My <span>Blog</span></h2>
+      <p class="section-subtitle text-center mb-5">Insights, tutorials, and personal experiences from my coding journey.</p>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+            <div class="blog-card">
+                <img src="assets/recommendation.png" alt="Recommendation Systems" class="img-fluid rounded mb-3">
+                <h4>Understanding Recommendation Systems</h4>
+                <p class="small">Learn how recommendation engines like Netflix and Amazon suggest content tailored just for you...</p>
+                <a href="blogs/recommendation-blog.html" class="btn btn-sm btn-outline-light">Read More</a>
+              </div>
+              
+        </div>
+
+        <div class="col-md-4">
+            <div class="blog-card">
+                <img src="assets/gans-banner.png" alt="GANs AI Article" class="img-fluid rounded mb-3">
+                <h4>Unveiling GANs: How AI Learns to Imagine</h4>
+                <p class="small">Explore how Generative Adversarial Networks (GANs) allow machines to create images, art, and even realistic faces from scratch.</p>
+                <a href="blogs/gan-blog.html" class="btn btn-sm btn-outline-light">Read More</a>
+              </div>
+              
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="container text-center">
+      <div class="footer-social mt-3">
+        <a href="https://www.linkedin.com/in/abdulrahman-hamdi-54a8a6143/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/98abdulrahmanhamdi/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com/abdulrahmanh524" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://github.com/abdulrahmanhamdi" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+  
+      <p class="footer-copy mt-4">© 2025 Abdulrahman Hamdi — All rights reserved.</p>
+      <a href="#" class="back-to-top-icon" title="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+      </a>
+          </div>
+  </footer>
+  
+  <!-- Some Javascript -->
+  <script src="js/jquery-2.1.1.js"></script>
+  <script src="js/swiper.jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="js/jquery.counterup.min.js"></script>
+  
+  <!-- External JS -->
+  <script src="js/script.js"></script>
+  <script src="js/search.js"></script>
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+  </body>
+  </html>
+  
