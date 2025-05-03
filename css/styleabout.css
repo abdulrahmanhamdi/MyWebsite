@@ -500,3 +500,60 @@
     font-size: 1rem;
   }
 }
+.course-timeline {
+  background-color: var(--section-bg);
+  padding: 4rem 2rem;
+}
+
+.timeline-heading {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: var(--text-color);
+  margin-bottom: 2.5rem;
+}
+
+.timeline {
+  border-left: 3px solid var(--primary-color);
+  margin-left: 2rem;
+  position: relative;
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.timeline-item {
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.timeline-item .dot {
+  width: 36px;
+  height: 36px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  position: absolute;
+  left: -1.8rem;
+  top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+
+.timeline-item .content {
+  margin-left: 2rem;
+}
+
+.timeline-item h3 {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  margin-bottom: 0.3rem;
+}
+
+.timeline-item p {
+  color: var(--light-text);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}

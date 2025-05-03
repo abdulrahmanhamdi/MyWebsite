@@ -23,6 +23,8 @@
 </head>
 
 <body class="blog-page">
+<div id="particles-js"></div>
+
     <!-- Top Navigation Bar -->
   <nav class="navbar navbar-expand-md main-navbar shadow-sm rounded-4 mt-2">
     <div class="container-fluid d-flex justify-content-between align-items-center px-4">
@@ -91,37 +93,106 @@
   </nav>
   
 
-  <!-- Blog Section -->
-  <section class="blog-section">
+<!-- Project Showcase Section -->
+<section class="my-projects-section" style="padding-top: 120px;">
     <div class="container">
-      <h2 class="section-title text-center mb-4">My <span>Blog</span></h2>
-      <p class="section-subtitle text-center mb-5">Insights, tutorials, and personal experiences from my coding journey.</p>
-
-      <div class="row g-4">
-        <div class="col-md-4">
-            <div class="blog-card">
-                <img src="assets/recommendation.png" alt="Recommendation Systems" class="img-fluid rounded mb-3">
-                <h4>Understanding Recommendation Systems</h4>
-                <p class="small">Learn how recommendation engines like Netflix and Amazon suggest content tailored just for you...</p>
-                <a href="blogs/recommendation-blog.html" class="btn btn-sm btn-outline-light">Read More</a>
-              </div>
-              
+        <h1 class="section-title">My Work</h1>
+        <div class="work-list">
+  
+        <div class="work">
+          <img src="fot/portfolio.png" alt="Logo Project">
+          <div class="layer">
+            <h3>Portfolio Website</h3>
+            <p>A personal web page showcasing my projects, skills, and contact information using HTML, CSS, and responsive design.</p>
+            <a href="https://github.com/shahdda" target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
+          </div>
         </div>
-
-        <div class="col-md-4">
-            <div class="blog-card">
-                <img src="assets/gans-banner.png" alt="GANs AI Article" class="img-fluid rounded mb-3">
-                <h4>Unveiling GANs: How AI Learns to Imagine</h4>
-                <p class="small">Explore how Generative Adversarial Networks (GANs) allow machines to create images, art, and even realistic faces from scratch.</p>
-                <a href="blogs/gan-blog.html" class="btn btn-sm btn-outline-light">Read More</a>
-              </div>
-              
+  
+        <div class="work">
+          <img src="fot/pharma.png" alt="AI Project">
+          <div class="layer">
+            <h3>Pharmacists Team Website</h3>
+            <p>A simple and responsive website in Arabic for a pharmacist team, featuring services, team info, and a contact form.</p>
+            <a href="https://github.com/shahdda" target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
+          </div>
         </div>
-
-
+  
+        <div class="work">
+          <img src="fot/car.png" alt="Smart Park">
+          <div class="layer">
+            <h3>Smart Park Sensor Project</h3>
+            <p>A web interface connected to a smart parking system using HTML, CSS (Frontend), and Python for sensor control and automation.</p>
+            <a href="https://github.com/shahdda" target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
+          </div>
+        </div>
+  
+        <div class="work">
+          <img src="fot/gezegen.png" alt="Scrolling Website">
+          <div class="layer">
+            <h3>Scrolling Website</h3>
+            <p>Scrolling Website using Html & CSS & Javascript</p>
+            <a href="https://github.com/shahdda" target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
+          </div>
+        </div>
+  
+        <div class="work">
+          <img src="fot/photsh.jpg" alt="Photoshop">
+          <div class="layer">
+            <h3>Photoshop</h3>
+            <p>Some of my Photoshop designs</p>
+            <a href="https://www.behance.net/gallery/207794669/Social-media-designs-" target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
+          </div>
+        </div>
+  
+        <div class="work">
+          <img src="fot/shop.png" alt="Adidas Page">
+          <div class="layer">
+            <h3>Adidas Landing Page</h3>
+            <p>A stylish and responsive landing page for Adidas, featuring a modern navigation bar, product highlight, and clean layout using HTML and CSS.</p>
+            <a href="https://github.com/shahdda" target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
+          </div>
+        </div>
+  
       </div>
     </div>
   </section>
+
+<!-- Services Section -->
+<section class="services-section" style="position: relative;">
+    <div id="particles-services"></div> 
+    <div class="container">
+        <h1 class="section-title">My Services</h1>
+        <div class="services">
+        <div class="service-card">
+          <i class="fas fa-laptop-code service-icon"></i>
+          <div class="service-title">Web Development</div>
+          <div class="service-description">Responsive websites using HTML, CSS, and JavaScript.</div>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-mobile-alt service-icon"></i>
+          <div class="service-title">Mobile App Development</div>
+          <div class="service-description">Android apps built with modern frameworks.</div>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-brain service-icon"></i>
+          <div class="service-title">AI Integration</div>
+          <div class="service-description">Implementing simple AI features with Python.</div>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-chalkboard-teacher service-icon"></i>
+          <div class="service-title">Teaching</div>
+          <div class="service-description">Private and online tutoring in technical subjects.</div>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-headset service-icon"></i>
+          <div class="service-title">Technical Support</div>
+          <div class="service-description">Helping clients with software and hardware issues.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
 
 <!-- Footer -->
 <footer class="site-footer">
@@ -152,6 +223,97 @@
   <!-- External JS -->
   <script src="js/script.js"></script>
   <script src="js/search.js"></script>
+  <!-- Particles.js Library -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<!-- Init Script -->
+<script>
+  particlesJS("particles-js", {
+    "particles": {
+      "number": {
+        "value": 60
+      },
+      "color": {
+        "value": "#ffffff"
+      },
+      "shape": {
+        "type": "circle"
+      },
+      "opacity": {
+        "value": 0.5
+      },
+      "size": {
+        "value": 2
+      },
+      "line_linked": {
+        "enable": true,
+        "distance": 120,
+        "color": "#ffffff",
+        "opacity": 0.3,
+        "width": 1
+      },
+      "move": {
+        "enable": true,
+        "speed": 1
+      }
+    },
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": {
+        "onhover": {
+          "enable": true,
+          "mode": "repulse"
+        }
+      }
+    },
+    "retina_detect": true
+  });
+  particlesJS("particles-services", {
+    "particles": {
+      "number": { "value": 60 },
+      "color": { "value": "#ffffff" },
+      "shape": { "type": "circle" },
+      "opacity": { "value": 0.5 },
+      "size": { "value": 2 },
+      "line_linked": {
+        "enable": true,
+        "distance": 120,
+        "color": "#ffffff",
+        "opacity": 0.3,
+        "width": 1
+      },
+      "move": { "enable": true, "speed": 1 }
+    },
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": {
+        "onhover": { "enable": true, "mode": "repulse" }
+      }
+    },
+    "retina_detect": true
+  });
+</script>
+<style>
+#particles-js,
+#particles-services {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: transparent;
+  pointer-events: none;
+}
+
+.my-projects-section > *:not(#particles-js),
+.services-section > *:not(#particles-services) {
+  position: relative;
+  z-index: 1;
+}
+
+  </style>
+
   
   <!-- Google Analytics -->
   <script async src="https://www.google-analytics.com/analytics.js"></script>

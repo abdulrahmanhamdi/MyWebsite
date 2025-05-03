@@ -191,3 +191,35 @@ window.addEventListener('scroll', () => {
     backToTopBtn.style.display = 'none';
   }
 });
+
+/*========== Service Page ============*/
+
+const works = document.querySelectorAll('.work');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.3 });
+
+works.forEach(work => {
+  observer.observe(work);
+});
+window.addEventListener('scroll', () => {
+const navbarCollapse = document.querySelector('.navbar-collapse');
+if (window.innerWidth <= 768 && navbarCollapse?.classList.contains('show')) {
+const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+if (bsCollapse) bsCollapse.hide();
+}
+});
+
+document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+link.addEventListener('click', () => {
+const navbarCollapse = document.querySelector('.navbar-collapse');
+if (window.innerWidth <= 768 && navbarCollapse?.classList.contains('show')) {
+  const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+  if (bsCollapse) bsCollapse.hide();
+}
+});
+});
