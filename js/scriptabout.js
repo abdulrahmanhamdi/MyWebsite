@@ -148,4 +148,17 @@ window.addEventListener("scroll", () => {
       }, 600);
     });
   });
+  document.querySelector('.back-to-top-icon').addEventListener('click', function (e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+  const backToTopBtn = document.querySelector('.back-to-top-icon');
+  
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTopBtn.style.display = 'block';
+    } else {
+      backToTopBtn.style.display = 'none';
+    }
+  });
   

@@ -120,6 +120,7 @@ header.hero {
   position: relative;
   margin-top: 0;
   transition: background-position 0.3s ease;
+  padding-top: 120px; 
 }
 
 header.hero h1 {
@@ -1092,5 +1093,95 @@ form#contact-form button:hover {
 
   header.hero .btn {
     margin-top: 1.5em;
+  }
+}
+.scrolled-navbar {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.9));
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+/* ======= Footer ======= */
+.site-footer {
+  background-color: #26243a;
+  padding: 4rem 1rem;
+  color: #ccc;
+  font-family: 'Inter', sans-serif;
+}
+
+.site-footer h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #dbeafe;
+  margin-bottom: 0.3rem;
+}
+
+.footer-line {
+  width: 60px;
+  height: 3px;
+  background: var(--primary-color);
+  margin: 0.5rem auto 1rem;
+  border-radius: 4px;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.footer-social a {
+  font-size: 1.8rem;
+  color: #a3a3c2;
+  transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: var(--hover-color);
+  transform: scale(1.2);
+}
+
+.footer-copy {
+  font-size: 1rem;
+  color: #aaa;
+  margin-top: 2rem;
+}
+@media (max-width: 768px) {
+  .footer-social {
+    gap: 1rem;
+  }
+
+  .footer-copy {
+    font-size: 0.9rem;
+  }
+}
+.back-to-top-icon {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--primary-color);
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 0.75rem;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 999;
+  transition: all 0.3s ease;
+  opacity: 0.8;
+  text-align: center;
+  display: none
+}
+
+.back-to-top-icon:hover {
+  background-color: var(--hover-color);
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .back-to-top-icon {
+    bottom: 20px;
+    right: 20px;
+    padding: 0.6rem;
+    font-size: 1rem;
   }
 }

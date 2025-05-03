@@ -170,3 +170,24 @@ window.addEventListener('scroll', () => {
       });
     }
   });
+  window.addEventListener('scroll', () => {
+  const navbar = document.querySelector('.main-navbar');
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled-navbar');
+  } else {
+    navbar.classList.remove('scrolled-navbar');
+  }
+});
+document.querySelector('.back-to-top-icon').addEventListener('click', function (e) {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+const backToTopBtn = document.querySelector('.back-to-top-icon');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    backToTopBtn.style.display = 'block';
+  } else {
+    backToTopBtn.style.display = 'none';
+  }
+});
