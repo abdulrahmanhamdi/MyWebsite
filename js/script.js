@@ -182,6 +182,12 @@ document.querySelector('.back-to-top-icon').addEventListener('click', function (
   e.preventDefault();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+document.querySelector('.back-to-top-icon').addEventListener('keydown', function (e) {
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+});
 const backToTopBtn = document.querySelector('.back-to-top-icon');
 
 window.addEventListener('scroll', () => {
@@ -223,3 +229,44 @@ if (window.innerWidth <= 768 && navbarCollapse?.classList.contains('show')) {
 }
 });
 });
+const stars = document.querySelectorAll('.star-rating .stars i');
+
+stars.forEach((star) => {
+  star.addEventListener('mouseover', function () {
+    const value = parseInt(this.getAttribute('data-value'));
+    highlightStars(value);
+  });
+
+  star.addEventListener('mouseout', resetStars);
+
+  star.addEventListener('click', function () {
+    const value = parseInt(this.getAttribute('data-value'));
+    localStorage.setItem('feedback-rating', value);
+    markSelected(value);
+  });
+});
+
+function highlightStars(value) {
+  stars.forEach((star) => {
+    const starValue = parseInt(star.getAttribute('data-value'));
+    star.classList.toggle('hovered', starValue <= value);
+  });
+}
+
+function resetStars() {
+  stars.forEach((star) => star.classList.remove('hovered'));
+}
+
+function markSelected(value) {
+  stars.forEach((star) => {
+    const starValue = parseInt(star.getAttribute('data-value'));
+    star.classList.toggle('selected', starValue <= value);
+  });
+}
+
+window.addEventListener('beforeunload', () => {
+  localStorage.removeItem('feedback-rating');
+});
+
+const savedRating = localStorage.getItem('feedback-rating');
+if (savedRating) markSelected(parseInt(savedRating));

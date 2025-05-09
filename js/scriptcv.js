@@ -90,11 +90,18 @@ document.querySelectorAll(".nav-sound").forEach(link => {
   link.addEventListener("click", () => playSound(clickSound));
 });
 
+// ===== Sidebar Toggle =====
+document.getElementById("sidebarToggle").addEventListener("click", function () {
+  document.getElementById("sidebar").classList.add("active");
+});
+document.getElementById("closeSidebar").addEventListener("click", function () {
+  document.getElementById("sidebar").classList.remove("active");
+});
+setTimeout(() => {
+  const firstLink = document.querySelector("#sidebar .sidebar-menu a");
+  if (firstLink) firstLink.focus();
+}, 100);
 
-const offcanvas = document.getElementById("sideMenu");
-if (offcanvas) {
-  offcanvas.addEventListener("show.bs.offcanvas", () => playSound(clickSound));
-}
 
 
 const modeToggles = [
@@ -168,6 +175,12 @@ document.addEventListener("DOMContentLoaded", () => {
 document.querySelector('.back-to-top-icon').addEventListener('click', function (e) {
   e.preventDefault();
   window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+document.querySelector('.back-to-top-icon').addEventListener('keydown', function (e) {
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 });
 const backToTopBtn = document.querySelector('.back-to-top-icon');
 

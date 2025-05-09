@@ -54,79 +54,78 @@
   <div class="cursor-glow"></div>
 
 
-
 <nav class="navbar navbar-expand-md main-navbar shadow-sm rounded-4 mt-2">
-    <div class="container-fluid d-flex justify-content-between align-items-center px-4">
-      <div class="d-flex align-items-center gap-3">
-        <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-          <img src="assets/logo.png" alt="INFINITY TEAM" class="logo" style="max-height: 50px;">
-        </a>
-        <button id="muteToggle" class="icon-btn"><i id="muteIcon" class="bi bi-volume-up-fill"></i></button>
-        <button id="modeToggle" class="icon-btn"><i id="modeIcon" class="bi bi-brightness-high-fill"></i></button>
-      </div>
-  
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
-        <i class="bi bi-list"></i>
+  <div class="container-fluid d-flex justify-content-between align-items-center px-4">
+
+    <!-- Logo + Toggles -->
+    <div class="d-flex align-items-center gap-3">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <img src="assets/logo.png" alt="INFINITY TEAM" class="logo" style="max-height: 50px;">
+      </a>
+      <button id="muteToggle" class="icon-btn" aria-label="Mute or unmute sound" role="button">
+        <i id="muteIcon" class="bi bi-volume-up-fill" aria-hidden="true"></i>
       </button>
-      <button id="sidebarToggle" class="icon-btn">
-        <i class="bi bi-list"></i> 
+      <button id="modeToggle" class="icon-btn" aria-label="Toggle dark or light mode" role="button">
+        <i id="modeIcon" class="bi bi-brightness-high-fill" aria-hidden="true"></i>
       </button>
-  
-      <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
-        <form class="d-flex ms-3" role="search" id="searchForm">
-          <input class="form-control form-control-sm rounded-pill me-2" type="search" placeholder="Search..." aria-label="Search" id="searchInput">
-          <button class="search-icon-btn btn btn-sm rounded-pill" type="submit">
-            <i class="bi bi-search"></i>
-          </button>
-                  </form>
-        <div id="search-nav" class="search-nav-box d-none">
-          <span id="match-info">0/0</span>
-          
-          <button id="prevMatch" class="nav-btn" title="Previous">
-            <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor">
-              <path d="M8 4l4 4H4z"/>
-            </svg>
-          </button>
-        
-          <button id="nextMatch" class="nav-btn" title="Next">
-            <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor">
-              <path d="M8 12l4-4H4z"/>
-            </svg>
-          </button>
-        
-          <button id="closeMatch" class="nav-btn" title="Close">
-            <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor">
-              <path d="M4.646 4.646a.5.5 0 011 .708L5.707 6l.939.939a.5.5 0 11-.707.707L5 6.707l-.939.939a.5.5 0 11-.707-.707L4.293 6l-.939-.939a.5.5 0 11.707-.707L5 5.293l.939-.939a.5.5 0 11.707.707L5.707 6l.939.939a.5.5 0 01-.707.707L5 6.707l-.939.939a.5.5 0 01-.707-.707L4.293 6l-.939-.939a.5.5 0 01.707-.707L5 5.293l.939-.939a.5.5 0 01.707.707L5.707 6z"/>
-            </svg>
-          </button>
-        </div>
-        
-        <ul class="navbar-nav gap-4">
-            <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
-            <li class="nav-item"><a class="nav-link" href="#timeline">Learning Path</a></li>
-            <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
-            <li class="nav-item"><a class="nav-link" href="#stats">Statistics</a></li>
-            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-          </ul>
-          
-      </div>
     </div>
-  </nav>
-  <aside id="sidebar" class="sidebar">
-    <button id="closeSidebar" class="close-btn"><i class="bi bi-x-lg"></i></button>
-    <ul class="sidebar-menu">
-        <li><a href="index.html"><i class="bi bi-house-door me-2"></i> Home</a></li>
-        <li><a href="resume.html"><i class="bi bi-file-earmark-person me-2"></i> Resume</a></li>
-        <li><a href="blog.html"><i class="bi bi-journals me-2"></i> Blog</a></li>
-        <li><a href="services.html"><i class="bi bi-briefcase-fill me-2"></i> Services</a></li>
-        <li><a href="infinityteam.html"><i class="bi bi-easel2-fill me-2"></i> Infinity Team</a></li>
-        <li><a href="contact.html"><i class="bi bi-envelope-fill me-2"></i> Contact</a></li>
-        <li><a href="about.html"><i class="bi bi-info-circle-fill me-2"></i> About</a></li>
+
+    <!-- Collapse toggles -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+      aria-label="Toggle navigation menu" role="button">
+      <i class="bi bi-list" aria-hidden="true"></i>
+    </button>
+    <button id="sidebarToggle" class="icon-btn" aria-label="Open sidebar menu" role="button">
+      <i class="bi bi-list" aria-hidden="true"></i>
+    </button>
+
+    <!-- Navbar links + Search -->
+    <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+      <div class="search-container position-relative me-3">
+        <form class="d-flex" role="search" id="searchForm">
+          <input class="form-control form-control-sm rounded-pill me-2" type="search"
+            placeholder="Search..." aria-label="Search" id="searchInput">
+          <button class="search-icon-btn btn btn-sm rounded-pill" type="submit" aria-label="Submit search">
+            <i class="bi bi-search" aria-hidden="true"></i>
+          </button>
+          <button id="voiceBtn" type="button" class="voice-btn search-icon-btn ms-1"
+            title="Voice Search" aria-label="Activate voice search" role="button">
+            <i class="bi bi-mic-fill" aria-hidden="true"></i>
+          </button>
+        </form>
+        <div id="autocomplete-list" class="autocomplete-items"></div>
+      </div>
+
+      <!-- Navigation Links -->
+      <ul class="navbar-nav gap-4">
+        <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
+        <li class="nav-item"><a class="nav-link" href="#timeline">Learning Path</a></li>
+        <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+        <li class="nav-item"><a class="nav-link" href="#stats">Statistics</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
-      
-  </aside>
+
+    </div>
+  </div>
+</nav>
+
+<aside id="sidebar" class="sidebar">
+  <button id="closeSidebar" class="close-btn" aria-label="Close sidebar menu" role="button">
+    <i class="bi bi-x-lg" aria-hidden="true"></i>
+  </button>
+  <ul class="sidebar-menu">
+    <li><a href="index.html"><i class="bi bi-house-door me-2" aria-hidden="true"></i> Home</a></li>
+    <li><a href="resume.html"><i class="bi bi-file-earmark-person me-2" aria-hidden="true"></i> Resume</a></li>
+    <li><a href="blog.html"><i class="bi bi-journals me-2" aria-hidden="true"></i> Blog</a></li>
+    <li><a href="services.html"><i class="bi bi-briefcase-fill me-2" aria-hidden="true"></i> Services</a></li>
+    <li><a href="infinityteam.html"><i class="bi bi-easel2-fill me-2" aria-hidden="true"></i> Infinity Team</a></li>
+    <li><a href="contact.html"><i class="bi bi-envelope-fill me-2" aria-hidden="true"></i> Contact</a></li>
+    <li><a href="about.html"><i class="bi bi-info-circle-fill me-2" aria-hidden="true"></i> About</a></li>
+  </ul>
+</aside>
+
   
   <header id="hero" class="hero-section text-center d-flex align-items-center justify-content-center">
     <div class="container hero-content">
@@ -444,40 +443,88 @@
     </div>
   </section>
   
-  <section id="contact" class="contact-banner">
-    <div class="container">
-      <h1>Need help with a concept or topic?</h1>
-      <p>I’m available to discuss your challenges in math, programming, or university courses. Let’s solve it together.</p>
-  
-      <div class="social-icons mt-4">
-        <a href="https://www.linkedin.com/in/abdulrahman-hamdi-54a8a6143/" target="_blank" title="LinkedIn">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a href="https://wa.me/905314551282" target="_blank" title="WhatsApp">
-          <i class="fab fa-whatsapp"></i>
-        </a>
-        <a href="mailto:abdulrahmanh524@gmail.com" target="_blank" title="Email">
-          <i class="fas fa-envelope"></i>
-        </a>
+<section id="feedback" class="feedback-section py-5">
+  <div class="container text-center">
+    <h2 class="feedback-heading mb-3">Your Feedback</h2>
+    <p class="feedback-subtitle mb-4">Help us improve by sharing your thoughts.</p>
+
+    <!-- Rating -->
+    <div class="star-rating mb-4">
+      <label class="fw-bold mb-2">How helpful was this page?</label>
+      <div class="stars d-flex justify-content-center gap-2">
+        <i class="bi bi-star-fill" data-value="1"></i>
+        <i class="bi bi-star-fill" data-value="2"></i>
+        <i class="bi bi-star-fill" data-value="3"></i>
+        <i class="bi bi-star-fill" data-value="4"></i>
+        <i class="bi bi-star-fill" data-value="5"></i>
       </div>
     </div>
-  </section>
-  
-  <footer class="site-footer">
-    <div class="container text-center">
-      <div class="footer-social mt-3">
-        <a href="https://www.linkedin.com/in/abdulrahman-hamdi-54a8a6143/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://www.instagram.com/98abdulrahmanhamdi/" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://x.com/abdulrahmanh524" target="_blank"><i class="fab fa-x-twitter"></i></a>
-        <a href="https://github.com/abdulrahmanhamdi" target="_blank"><i class="fab fa-github"></i></a>
+
+    <!-- Options -->
+    <div class="feedback-options d-flex justify-content-center gap-3 flex-wrap mb-4">
+      <label><input type="radio" name="helpful" value="yes"> This was helpful </label>
+      <label><input type="radio" name="helpful" value="no"> Not really</label>
+    </div>
+
+    <!-- Form -->
+    <form id="feedbackForm" class="mx-auto" style="max-width: 600px;">
+      <textarea name="message" class="form-control feedback-textarea mb-3" rows="5" placeholder="Write your suggestion..." required></textarea>
+      <button type="submit" class="btn btn-primary w-100">Send Feedback</button>
+      <p id="feedbackStatus" class="text-center mt-3 small text-muted"></p>
+    </form>
+
+    <!-- View Counter -->
+    <p class="mt-5 small text-muted">
+      <i class="bi bi-eye"></i> This page has been viewed <span id="viewCount">...</span> times.
+    </p>
+  </div>
+</section>
+
+
+ <footer class="site-footer">
+  <div class="container">
+    <div class="row text-center text-md-start gy-4">
+
+      <!-- Quick Links -->
+      <div class="col-md-4">
+        <h5 class="text-light fw-bold mb-3">Quick Links</h5>
+        <ul class="list-unstyled footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
       </div>
-  
-      <p class="footer-copy mt-4">© 2025 Abdulrahman Hamdi — All rights reserved.</p>
-      <a href="#" class="back-to-top-icon" title="Back to Top">
-        <i class="fas fa-arrow-up"></i>
-      </a>
-          </div>
-  </footer>
+
+      <!-- Contact Info -->
+      <div class="col-md-4">
+        <h5 class="text-light fw-bold mb-3">Contact</h5>
+        <p><i class="fas fa-envelope me-2"></i><a href="mailto:abdulrahmanh524@gmail.com" class="footer-email">abdulrahmanh524@gmail.com</a></p>
+        <p><i class="fab fa-whatsapp me-2"></i><a href="https://wa.me/905314551282" class="footer-email">+90 531 455 1282</a></p>
+      </div>
+
+      <!-- Social Links -->
+      <div class="col-md-4">
+        <h5 class="text-light fw-bold mb-3">Follow Me</h5>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/abdulrahman-hamdi-54a8a6143/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.instagram.com/98abdulrahmanhamdi/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://x.com/abdulrahmanh524" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://github.com/abdulrahmanhamdi" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="text-secondary my-4">
+    <p class="footer-copy text-center">© 2025 Abdulrahman Hamdi — All rights reserved.</p>
+    <a href="#" class="back-to-top-icon" title="Back to Top" aria-label="Scroll to top" role="button">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+  </div>
+</footer>
+
   
           
   <!-- Scripts -->
@@ -488,5 +535,122 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
   <script src="js/scriptit.js"></script>
+  <script src="js/scriptsearch.js"></script>
+
+
+<!-- Floating speech button with accessibility support -->
+<button id="readSelectionBtn"
+  aria-label="Read selected text aloud"
+  role="button"
+  style="
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    padding: 12px 16px;
+    background: linear-gradient(to bottom right, rgba(34,211,238,0.15), rgba(255,255,255,0.03));
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  ">
+  <i class="bi bi-volume-up-fill" aria-hidden="true" style="margin-right: 8px;"></i>
+  Speak
+</button>
+
+
+
+<script>
+  const btn = document.getElementById('readSelectionBtn');
+  btn.addEventListener('mouseenter', () => {
+    btn.style.background = 'var(--primary-color)';
+    btn.style.color = '#fff';
+    btn.style.transform = 'scale(1.05)';
+  });
+  btn.addEventListener('mouseleave', () => {
+    btn.style.background = 'linear-gradient(to bottom right, rgba(34,211,238,0.15), rgba(255,255,255,0.03))';
+    btn.style.color = 'var(--primary-color)';
+    btn.style.transform = 'scale(1)';
+  });
+
+  btn.addEventListener('click', () => {
+    const selectedText = window.getSelection().toString().trim();
+    if (selectedText.length === 0) {
+      alert("Please select text first.");
+      return;
+    }
+    const speech = new SpeechSynthesisUtterance(selectedText);
+    speech.lang = 'en-US'; // You can set 'ar-SA' or 'tr-TR' if needed
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(speech);
+  });
+  // Stop speech when navigating away or refreshing
+window.addEventListener('beforeunload', function () {
+  if (speechSynthesis.speaking) {
+    speechSynthesis.cancel();
+  }
+});
+
+document.addEventListener('visibilitychange', function () {
+  if (document.hidden && speechSynthesis.speaking) {
+    speechSynthesis.cancel();
+  }
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  emailjs.init("6sI2w087pXXbjM8TR");
+  
+  let selectedRating = 0;
+  document.querySelectorAll('.star-rating i').forEach(star => {
+    star.addEventListener('click', () => {
+      selectedRating = star.getAttribute('data-value');
+      document.querySelectorAll('.star-rating i').forEach(s => {
+        s.classList.remove('bi-star-fill');
+        s.classList.add('bi-star');
+      });
+      for (let i = 0; i < selectedRating; i++) {
+        document.querySelectorAll('.star-rating i')[i].classList.remove('bi-star');
+        document.querySelectorAll('.star-rating i')[i].classList.add('bi-star-fill');
+      }
+    });
+  });
+
+  document.getElementById("feedbackForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const message = e.target.message.value;
+    const helpful = document.querySelector('input[name="helpful"]:checked')?.value || "Not selected";
+    const rating = selectedRating || "Not rated";
+
+const templateParams = {
+  rating: rating,
+  helpful: helpful,
+  message: message,
+  timestamp: new Date().toLocaleString(),
+};
+
+
+    emailjs.send("service_8a9w77v", "template_hwbfr0w", templateParams)
+      .then(() => {
+        document.getElementById("feedbackStatus").innerText = "✅ Feedback sent successfully!";
+        e.target.reset();
+        selectedRating = 0;
+        document.querySelectorAll('.star-rating i').forEach(star => {
+          star.classList.remove('bi-star-fill');
+          star.classList.add('bi-star');
+        });
+      }, (error) => {
+        document.getElementById("feedbackStatus").innerText = "❌ Failed to send feedback.";
+        console.error(error);
+      });
+  });
+</script>
+
 </body>
 </html>

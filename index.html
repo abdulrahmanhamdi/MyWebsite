@@ -20,75 +20,66 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Open+Sans:300,400,700" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
-  <!-- Top Navigation Bar -->
-  <nav class="navbar navbar-expand-md main-navbar shadow-sm rounded-4 mt-2">
-    <div class="container-fluid d-flex justify-content-between align-items-center px-4">
-  
-      <!-- Left: Logo + Dark Mode -->
-      <div class="d-flex align-items-center gap-3">
-        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-          <img src="assets/logo_home2.png" alt="Logo" class="big-logo">
-        </a>
-  
-        <!-- Dark mode toggle -->
-        <button id="modeToggle" class="icon-btn" title="Toggle Dark Mode">
-          <i id="modeIcon" class="bi bi-brightness-high-fill"></i>
-        </button>
-      </div>
-  
-      <!-- Navbar collapse button -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
-        <i class="bi bi-list"></i>
+<!-- Top Navigation Bar -->
+<nav class="navbar navbar-expand-md main-navbar shadow-sm rounded-4 mt-2">
+  <div class="container-fluid d-flex justify-content-between align-items-center px-4">
+
+    <!-- Left: Logo + Dark Mode -->
+    <div class="d-flex align-items-center gap-3">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="assets/logo_white.png" alt="Logo" class="big-logo">
+      </a>
+
+      <!-- Dark mode toggle -->
+      <button id="modeToggle" class="icon-btn" title="Toggle Dark Mode" aria-label="Toggle dark or light mode" role="button">
+        <i id="modeIcon" class="bi bi-brightness-high-fill" aria-hidden="true"></i>
       </button>
-  
-      <!-- Collapsible content -->
-      <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
-  
-        <!-- Search form -->
-        <form class="d-flex ms-3" role="search" id="searchForm">
+    </div>
+
+    <!-- Navbar collapse button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+      aria-label="Toggle navigation menu" role="button">
+      <i class="bi bi-list" aria-hidden="true"></i>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+
+      <!-- Search container -->
+      <div class="search-container position-relative me-3">
+        <form class="d-flex" role="search" id="searchForm">
           <input class="form-control form-control-sm rounded-pill me-2" type="search" placeholder="Search..." aria-label="Search" id="searchInput">
-          <button class="search-icon-btn btn btn-sm rounded-pill" type="submit">
-            <i class="bi bi-search"></i>
+          
+          <button class="search-icon-btn btn btn-sm rounded-pill" type="submit" aria-label="Submit search">
+            <i class="bi bi-search" aria-hidden="true"></i>
+          </button>
+          
+          <button id="voiceBtn" type="button" class="voice-btn search-icon-btn ms-1" title="Voice Search" aria-label="Activate voice search" role="button">
+            <i class="bi bi-mic-fill" aria-hidden="true"></i>
           </button>
         </form>
-  
-        <!-- Search navigation box -->
-        <div id="search-nav" class="search-nav-box d-none">
-          <span id="match-info">0/0</span>
-          <button id="prevMatch" class="nav-btn" title="Previous">
-            <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor">
-              <path d="M8 4l4 4H4z"/>
-            </svg>
-          </button>
-          <button id="nextMatch" class="nav-btn" title="Next">
-            <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor">
-              <path d="M8 12l4-4H4z"/>
-            </svg>
-          </button>
-          <button id="closeMatch" class="nav-btn" title="Close">
-            <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor">
-              <path d="M4.646 4.646a.5.5 0 011 .708L5.707 6l.939.939a.5.5 0 11-.707.707L5 6.707l-.939.939a.5.5 0 11-.707-.707L4.293 6l-.939-.939a.5.5 0 11.707-.707L5 5.293l.939-.939a.5.5 0 11.707.707L5.707 6z"/>
-            </svg>
-          </button>
-        </div>
-  
-        <!-- Navigation links -->
-        <ul class="navbar-nav gap-4 ms-4">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="infinityteam.html">Infinity Team</a></li>
-          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="resume.html">My Resume</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
-  
+        <div id="autocomplete-list" class="autocomplete-items"></div>
       </div>
+
+      <!-- Navigation links -->
+      <ul class="navbar-nav gap-4 ms-4">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="infinityteam.html">Infinity Team</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="resume.html">My Resume</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+
     </div>
-  </nav>
+  </div>
+</nav>
+
   
   
 <header class="hero">
@@ -109,7 +100,7 @@
           <i class="bi bi-instagram"></i>
         </a>
         <a href="https://x.com/abdulrahmanh524" target="_blank" class="icon-link">
-          <i class="bi bi-twitter-x"></i>
+            <i class="fa-brands fa-x-twitter"></i>            
         </a>
         <a href="https://github.com/abdulrahmanhamdi" target="_blank" class="icon-link">
           <i class="bi bi-github"></i>
@@ -123,7 +114,7 @@
   <section class="projects-section">
     <div class="container text-center">
       <h2 class="section-title">
-        Selected <span>Projects</span>
+        <span class="plain-color">Selected</span> <span>Projects</span>
       </h2>
       <p class="section-subtitle">
         A collection of projects I've worked on as a freelancer and a student.
@@ -243,7 +234,7 @@
   <section class="testimonial certificates-section">
     <div class="container">
       <h2 class="section-title text-center mb-4">
-        My <span>Programming Journey</span>
+        <span class="plain-color">My</span> <span>Programming Journey</span>
       </h2>
       <p class="section-subtitle text-center mb-5">
         A collection of certificates earned through dedication and learning.
@@ -357,6 +348,42 @@
       </div>
     </div>
   </section>
+<section id="mission" class="mission-section py-5">
+  <div class="container text-center">
+    <h2 class="section-title mb-4">
+      <span>Who Is This For?</span>
+    </h2>
+    <p class="section-subtitle mb-5">
+      A platform crafted for ambitious students in engineering, computer science, and mathematics—those who aim to master concepts, solve problems, and succeed academically with clarity and support.
+    </p>
+    <div class="row justify-content-center g-4">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
+        <div class="audience-box">
+          <i class="bi bi-laptop audience-icon"></i>
+          <h4>University Students</h4>
+          <p>Ideal for those studying in Turkish or international universities looking for exam-oriented explanations.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
+        <div class="audience-box">
+          <i class="bi bi-code-slash audience-icon"></i>
+          <h4>Future Engineers</h4>
+          <p>Math, algorithms, and programming resources made simple and visually clear for technical minds.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="audience-box">
+          <i class="bi bi-lightbulb audience-icon"></i>
+          <h4>Self Learners</h4>
+          <p>Even if you’re outside formal education, this is for anyone determined to grasp advanced concepts.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
   
 
 <!-- Contact Banner -->
@@ -364,26 +391,97 @@
   <div class="container text-center">
     <h1>Ready to start a new project?</h1>
     <p>Let's build something amazing together!</p>
-    <a href="mailto:abdulrahmanh524@gmail.com" class="btn btn-lg btn-primary">Contact Me</a>
+    <a href="contact.html" class="btn btn-lg btn-primary">Contact Me</a>
+  </div>
+</section>
+<section id="feedback" class="feedback-section py-5">
+  <div class="container text-center">
+    <h2 class="section-title mb-3">Your Feedback</h2>
+    <p class="section-subtitle mb-4">Help us improve by sharing your thoughts.</p>
+        <div class="star-rating">
+      <label>How helpful was this page?</label>
+      <div class="stars">
+        <i class="bi bi-star-fill" data-value="1"></i>
+        <i class="bi bi-star-fill" data-value="2"></i>
+        <i class="bi bi-star-fill" data-value="3"></i>
+        <i class="bi bi-star-fill" data-value="4"></i>
+        <i class="bi bi-star-fill" data-value="5"></i>
+      </div>
+    </div>
+
+    <!-- Radio feedback -->
+    <div class="d-flex justify-content-center align-items-center gap-4 mb-4 feedback-options">
+      <label class="form-check-label">
+        <input type="radio" name="helpful" value="yes" class="form-check-input"> ✅ This was helpful
+      </label>
+      <label class="form-check-label">
+        <input type="radio" name="helpful" value="no" class="form-check-input"> ❌ Not really
+      </label>
+    </div>
+
+    <!-- Feedback textarea -->
+    <form id="feedbackForm" class="mx-auto" style="max-width: 600px;">
+      <textarea name="message" class="form-control mb-3" rows="4" placeholder="Write your suggestion..." required></textarea>
+      <button type="submit" class="btn btn-primary w-100">Send Feedback</button>
+      <p id="feedbackStatus" class="text-center mt-3"></p>
+    </form>
+
+
+    <!-- View counter -->
+    <p class="mt-5 small text-muted">
+      <i class="bi bi-eye"></i> This page has been viewed <span id="viewCount">...</span> times.
+    </p>
   </div>
 </section>
 
-<!-- Footer -->
+
 <footer class="site-footer">
-  <div class="container text-center">
-    <div class="footer-social mt-3">
-      <a href="https://www.linkedin.com/in/abdulrahman-hamdi-54a8a6143/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-      <a href="https://www.instagram.com/98abdulrahmanhamdi/" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://x.com/abdulrahmanh524" target="_blank"><i class="fab fa-x-twitter"></i></a>
-      <a href="https://github.com/abdulrahmanhamdi" target="_blank"><i class="fab fa-github"></i></a>
+  <div class="container">
+    <div class="row text-center text-md-start justify-content-between">
+
+      <!-- Follow Me -->
+      <div class="col-md-4 mb-4">
+        <h5 class="text-uppercase fw-bold text-light mb-3">Follow Me</h5>
+        <div class="footer-social d-flex justify-content-center justify-content-md-start gap-3">
+          <a href="https://www.linkedin.com/in/abdulrahman-hamdi-54a8a6143/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.instagram.com/98abdulrahmanhamdi/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://x.com/abdulrahmanh524" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://github.com/abdulrahmanhamdi" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-4 mb-4">
+        <h5 class="text-uppercase fw-bold text-light mb-3">Quick Links</h5>
+        <ul class="list-unstyled footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-md-4 mb-4">
+        <h5 class="text-uppercase fw-bold text-light mb-3">Contact</h5>
+        <p><i class="bi bi-envelope-fill me-2"></i> 
+          <a href="mailto:abdulrahmanh524@gmail.com" class="text-decoration-none email-link">abdulrahmanh524@gmail.com</a>
+        </p>
+      </div>
+
     </div>
 
-    <p class="footer-copy mt-4">© 2025 Abdulrahman Hamdi — All rights reserved.</p>
-    <a href="#" class="back-to-top-icon" title="Back to Top">
-      <i class="fas fa-arrow-up"></i>
+    <hr class="my-4 border-secondary">
+
+    <p class="footer-copy text-center mt-3">© 2025 Abdulrahman Hamdi — All rights reserved.</p>
+
+    <a href="#" class="back-to-top-icon" title="Back to Top" aria-label="Scroll to top">
+      <i class="fas fa-arrow-up" aria-hidden="true"></i>
     </a>
-        </div>
+  </div>
 </footer>
+
 
 <!-- Some Javascript -->
 <script src="js/jquery-2.1.1.js"></script>
@@ -396,9 +494,144 @@
 
 <!-- External JS -->
 <script src="js/script.js"></script>
-<script src="js/search.js"></script>
+<script src="js/scriptsearch.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  emailjs.init("6sI2w087pXXbjM8TR");
+  
+  let selectedRating = 0;
+  document.querySelectorAll('.star-rating i').forEach(star => {
+    star.addEventListener('click', () => {
+      selectedRating = star.getAttribute('data-value');
+      document.querySelectorAll('.star-rating i').forEach(s => {
+        s.classList.remove('bi-star-fill');
+        s.classList.add('bi-star');
+      });
+      for (let i = 0; i < selectedRating; i++) {
+        document.querySelectorAll('.star-rating i')[i].classList.remove('bi-star');
+        document.querySelectorAll('.star-rating i')[i].classList.add('bi-star-fill');
+      }
+    });
+  });
 
-<!-- Google Analytics -->
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+  document.getElementById("feedbackForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const message = e.target.message.value;
+    const helpful = document.querySelector('input[name="helpful"]:checked')?.value || "Not selected";
+    const rating = selectedRating || "Not rated";
+
+const templateParams = {
+  rating: rating,
+  helpful: helpful,
+  message: message,
+  timestamp: new Date().toLocaleString(),
+};
+
+
+    emailjs.send("service_8a9w77v", "template_hwbfr0w", templateParams)
+      .then(() => {
+        document.getElementById("feedbackStatus").innerText = "✅ Feedback sent successfully!";
+        e.target.reset();
+        selectedRating = 0;
+        document.querySelectorAll('.star-rating i').forEach(star => {
+          star.classList.remove('bi-star-fill');
+          star.classList.add('bi-star');
+        });
+      }, (error) => {
+        document.getElementById("feedbackStatus").innerText = "❌ Failed to send feedback.";
+        console.error(error);
+      });
+  });
+</script>
+
+
+
+
+
+<!-- Floating speech button with accessibility support -->
+<button id="readSelectionBtn"
+  aria-label="Read selected text aloud"
+  role="button"
+  style="
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    padding: 12px 16px;
+    background: var(--btn-color);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--primary-color);
+    color: var(--swiper-button-hover-bg);
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  ">
+  <i class="bi bi-volume-up-fill" aria-hidden="true" style="margin-right: 8px;"></i>
+  Speak
+</button>
+
+
+<script>
+  const btn = document.getElementById('readSelectionBtn');
+  btn.addEventListener('mouseenter', () => {
+    btn.style.background = 'var(--primary-color)';
+    btn.style.color = '#fff';
+    btn.style.transform = 'scale(1.05)';
+  });
+  btn.addEventListener('mouseleave', () => {
+    btn.style.background = 'linear-gradient(to bottom right, rgba(34,211,238,0.15), rgba(255,255,255,0.03))';
+    btn.style.color = 'var(--primary-color)';
+    btn.style.transform = 'scale(1)';
+  });
+
+  btn.addEventListener('click', () => {
+    const selectedText = window.getSelection().toString().trim();
+    if (selectedText.length === 0) {
+      alert("Please select text first.");
+      return;
+    }
+    const speech = new SpeechSynthesisUtterance(selectedText);
+    speech.lang = 'en-US'; // You can set 'ar-SA' or 'tr-TR' if needed
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(speech);
+  });
+  // Stop speech when navigating away or refreshing
+window.addEventListener('beforeunload', function () {
+  if (speechSynthesis.speaking) {
+    speechSynthesis.cancel();
+  }
+});
+
+document.addEventListener('visibilitychange', function () {
+  if (document.hidden && speechSynthesis.speaking) {
+    speechSynthesis.cancel();
+  }
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true,
+  });
+</script>
+<script>
+  const pageKey = 'page_views_' + window.location.pathname;
+  let count = localStorage.getItem(pageKey);
+
+  if (!count) {
+    count = 1;
+  } else {
+    count = parseInt(count) + 1;
+  }
+
+  localStorage.setItem(pageKey, count);
+  document.getElementById('viewCount').innerText = count;
+</script>
+
 </body>
 </html>

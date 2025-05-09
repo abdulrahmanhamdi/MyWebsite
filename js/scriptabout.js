@@ -75,6 +75,7 @@ function playSound(sound) {
   }
 }
 
+
 const muteToggle = document.getElementById("muteToggle");
 if (muteToggle) {
   muteToggle.addEventListener("click", () => {
@@ -89,10 +90,19 @@ document.querySelectorAll(".nav-sound").forEach(link => {
   link.addEventListener("click", () => playSound(clickSound));
 });
 
-const offcanvas = document.getElementById("sideMenu");
-if (offcanvas) {
-  offcanvas.addEventListener("show.bs.offcanvas", () => playSound(clickSound));
-}
+// ===== Sidebar Toggle =====
+document.getElementById("sidebarToggle").addEventListener("click", function () {
+  document.getElementById("sidebar").classList.add("active");
+});
+document.getElementById("closeSidebar").addEventListener("click", function () {
+  document.getElementById("sidebar").classList.remove("active");
+});
+setTimeout(() => {
+  const firstLink = document.querySelector("#sidebar .sidebar-menu a");
+  if (firstLink) firstLink.focus();
+}, 100);
+
+
 
 const modeToggles = [
   document.getElementById("modeToggle"),
@@ -148,17 +158,22 @@ window.addEventListener("scroll", () => {
       }, 600);
     });
   });
-  document.querySelector('.back-to-top-icon').addEventListener('click', function (e) {
+document.querySelector('.back-to-top-icon').addEventListener('click', function (e) {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+document.querySelector('.back-to-top-icon').addEventListener('keydown', function (e) {
+  if (e.key === 'Enter' || e.key === ' ') {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-  const backToTopBtn = document.querySelector('.back-to-top-icon');
-  
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-      backToTopBtn.style.display = 'block';
-    } else {
-      backToTopBtn.style.display = 'none';
-    }
-  });
-  
+  }
+});
+const backToTopBtn = document.querySelector('.back-to-top-icon');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    backToTopBtn.style.display = 'block';
+  } else {
+    backToTopBtn.style.display = 'none';
+  }
+});
