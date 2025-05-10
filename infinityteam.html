@@ -651,6 +651,19 @@ const templateParams = {
       });
   });
 </script>
+<script>
+  const pageKey = 'page_views_' + window.location.pathname;
+  let count = localStorage.getItem(pageKey);
+
+  if (!count) {
+    count = 1;
+  } else {
+    count = parseInt(count) + 1;
+  }
+
+  localStorage.setItem(pageKey, count);
+  document.getElementById('viewCount').innerText = count;
+</script>
 
 </body>
 </html>
