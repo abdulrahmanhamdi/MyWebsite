@@ -2,7 +2,11 @@
   <img src="assets/img/header.png" alt="Banner" width="80%" />
 </p>
 
+<<<<<<< HEAD
 <h1 align="center">🚀 Interactive CV & Learning Platform</h1>
+=======
+Welcome to the official repository for **MyWebsite**, a modern personal portfolio and educational web platform designed to go beyond traditional resumes.
+>>>>>>> 6832f973170846b043ad35dd00196a5ae615f6f1
 
 <p align="center">
   <b>“Drawing My Own Path”</b><br>
