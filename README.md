@@ -1,6 +1,6 @@
 # 🚀 Interactive CV & Learning Platform
 
-Welcome to the official repository for **Infinity Team**, a modern personal portfolio and educational web platform designed to go beyond traditional resumes.
+Welcome to the official repository for **MyWebsite**, a modern personal portfolio and educational web platform designed to go beyond traditional resumes.
 
 ![Header](assets/img/header.png)
 
